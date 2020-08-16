@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Çakraz Emlak`,
+    description: `Emlak Hizmetleri`,
+    author: `@oktay`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,16 +24,36 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
+        apiURL: process.env.API_URL || 'http://localhost:1337',
         contentTypes: [`advert`, `page`],
         singleTypes: [`homepage`],
         queryLimit: 1000,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`poppins\:400,500,600`],
+        display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        postCssPlugins: [
+          require(`postcss-preset-env`)({
+            stage: 2,
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
