@@ -49,6 +49,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String
       description: String
     }
+    type StrapiHomepage implements Node {
+      title: String
+      phone: String
+      location: String
+      email: String
+      heroimg: File
+    }
   `
   createTypes(typeDefs)
 }

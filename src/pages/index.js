@@ -3,10 +3,13 @@ import { Link, graphql } from "gatsby"
 import Img from 'gatsby-image'
 
 const IndexPage = ({ data }) => {
-  const adverts = data.allStrapiAdvert.edges
+  const adverts = data.adverts.edges
   console.log(adverts)
   return (
-    adverts.length ? (
+    <>
+    <h1>{data.homepage.title}</h1>
+    <span>{data.homepage.phone ? data.homepage.phone : 'Telefon numarası girilmedi'}</span>
+    {adverts.length ? (
       <ul>
         {adverts.map(advert => (
           <Link to={advert.node.slug} key={advert.node.id}>
@@ -17,13 +20,14 @@ const IndexPage = ({ data }) => {
           </Link>
         ))}
       </ul>
-    ) : <h1>Hiç ilan yok</h1>
+    ) : <h1>Hiç ilan yok</h1>}
+    </>
   )
 }
 
 export const query = graphql`
   {
-    allStrapiAdvert {
+    adverts: allStrapiAdvert {
       edges {
         node {
           id
@@ -37,6 +41,19 @@ export const query = graphql`
                 ...GatsbyImageSharpFixed
               }
             }
+          }
+        }
+      }
+    }
+    homepage: strapiHomepage {
+      title
+      phone
+      location
+      email
+      heroimg {
+        childImageSharp {
+          fixed(width: 1400) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
