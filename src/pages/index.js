@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Highlights from '../components/Highlights'
 
 const IndexPage = ({ data }) => {
-  const adverts = data.adverts.edges
   return (
     <Layout>
-      <h1>Hello World</h1>
+      <Highlights />
     </Layout>
   )
 }

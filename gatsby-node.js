@@ -42,6 +42,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       heating: String
       thumbnail: File
       images: [File]
+      created_at: Date
     }
     type StrapiPage implements Node {
       id: String

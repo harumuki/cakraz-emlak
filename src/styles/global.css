@@ -8,7 +8,14 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 600;
-  --fs-body: 16px
+  --fs-body: 16px;
+  --fs-small: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,6 +23,15 @@ body {
   font-size: var(--fs-body);
   background-color: rgba(var(--c-background), 1);
   color: rgba(var(--c-text), 1)
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 a {

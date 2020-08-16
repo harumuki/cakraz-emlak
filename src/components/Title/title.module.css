@@ -1,0 +1,15 @@
+.hero {
+  position: relative;
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 90px;
+    background-color: rgba(var(--c-accent), 1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+}
