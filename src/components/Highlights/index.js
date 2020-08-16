@@ -32,7 +32,7 @@ const Highlights = () => {
   `)
   return (
     <section>
-      <Container classNames={styles.container}>
+      <Container>
         <Title>Öne Çıkan İlanlar</Title>
         <div className={styles.highlightsWrapper}>
           {data.adverts && data.adverts.edges.map(advert => (

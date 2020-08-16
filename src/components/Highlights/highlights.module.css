@@ -3,7 +3,3 @@
   grid-template-columns: 400px 400px 400px;
   grid-gap: 55px;
 }
-
-.container {
-  max-width: 1310px;
-}
