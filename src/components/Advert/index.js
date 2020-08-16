@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Location } from '../icons'
 
 import styles from './advert.module.css'
 
@@ -12,8 +13,9 @@ const Advert = ({advertData}) => {
       </div>
       <h3>{advertData.title}</h3>
       <div className={styles.footer}>
-        <span>
-          <i></i> {advertData.location}
+        <span className={styles.location}>
+          <Location className={styles.icon} />
+          <span>{advertData.location}</span>
         </span>
         <span className={styles.price}>{advertData.price}</span>
       </div>

@@ -43,6 +43,21 @@
   justify-content: space-between;
 }
 
+.location {
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-medium);
+
+  span {
+    font-size: var(--fs-small)
+  }
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
 .price {
   font-size: 24px;
   font-weight: var(--fw-bold);
