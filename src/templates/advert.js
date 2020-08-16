@@ -1,9 +1,12 @@
 
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
 
 const AdvertTemplate = ({ data }) => (
-  <h1>{data.strapiAdvert.title}</h1>
+  <Layout>
+    <h1>{data.strapiAdvert.title}</h1>
+  </Layout>
 )
 
 export default AdvertTemplate

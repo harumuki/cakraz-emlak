@@ -1,0 +1,16 @@
+.navigation {
+  display: flex;
+  align-items: center;
+
+  & a {
+    font-weight: var(--fw-medium)
+  }
+  
+  & a[aria-current="page"] {
+    color: rgba(var(--c-accent));
+  }
+
+  & a + a {
+    margin-left: 45px;
+  }
+}
