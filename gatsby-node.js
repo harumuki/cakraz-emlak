@@ -6,6 +6,20 @@
 
 // You can delete this file if you're not using it
 
+const path = require(`path`);
+
+const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
+  resolve(
+    graphql(request).then(result => {
+      if (result.errors) {
+        reject(result.errors)
+      }
+      
+      return result;
+    })
+  )
+});
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
@@ -29,6 +43,66 @@ exports.createSchemaCustomization = ({ actions }) => {
       thumbnail: File
       images: [File]
     }
+    type StrapiPage implements Node {
+      id: String
+      title: String
+      slug: String
+      description: String
+    }
   `
   createTypes(typeDefs)
 }
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
+  
+  const getAdverts = makeRequest(graphql, `
+    {
+      allStrapiAdvert {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+    `).then(result => {
+    result.data.allStrapiAdvert.edges.forEach(({ node }) => {
+      createPage({
+        path: `/${node.slug}`,
+        component: path.resolve(`src/templates/advert.js`),
+        context: {
+          id: node.id,
+          slug: node.slug
+        },
+      })
+    })
+  });
+
+  const getPages = makeRequest(graphql, `
+    {
+      allStrapiPage {
+        edges {
+          node {
+            id
+            slug
+          }
+        }
+      }
+    }
+    `).then(result => {
+    result.data.allStrapiPage.edges.forEach(({ node }) => {
+      createPage({
+        path: `/${node.slug}`,
+        component: path.resolve(`src/templates/page.js`),
+        context: {
+          slug: node.slug,
+          id: node.id,
+        },
+      })
+    })
+  });
+  
+  return Promise.all([getAdverts, getPages])
+};
