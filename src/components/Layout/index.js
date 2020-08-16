@@ -9,7 +9,6 @@ const Layout = ({ children, title }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title ? title + ' | ' : ''}Çakraz Emlak</title>
-        <link rel="canonical" href={window.location.href} />
       </Helmet>
       <Header />
       <main>{children}</main>
