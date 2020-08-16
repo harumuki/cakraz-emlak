@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 24px;
+  color: rgba(var(--c-accent), 1);
+}
+
+.info {
+  margin-left: 12px;
+  
+  & span {
+    display: block;
+    font-size: var(--fs-small);
+  }
+
+  & span:last-child {
+    font-weight: var(--fw-bold);
+  }
+}

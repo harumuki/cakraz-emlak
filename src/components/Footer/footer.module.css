@@ -1,0 +1,10 @@
+.footer {
+  background: #fff;
+  height: 185px;
+  padding-top: 42.5px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 300px 300px 300px
+}
