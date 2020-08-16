@@ -1,3 +1,5 @@
 export { default as Email } from './Email'
 export { default as Location } from './Location'
 export { default as Phone } from './Phone'
+export { default as SliderNext } from './SliderNext'
+export { default as SliderPrevious } from './SliderPrevious'
