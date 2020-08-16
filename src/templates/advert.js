@@ -2,10 +2,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Container from '../components/Container'
 
 const AdvertTemplate = ({ data }) => (
-  <Layout>
-    <h1>{data.strapiAdvert.title}</h1>
+  <Layout title={data.strapiAdvert.title}>
+    <Container>
+      <h1>{data.strapiAdvert.title}</h1>
+    </Container>
   </Layout>
 )
 
