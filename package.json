@@ -24,6 +24,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@svgr/cli": "^5.4.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "2.0.5"
   },
@@ -38,7 +39,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "icon": "svgr src/icons -d src/components/icons --icon --replace-attr-values \"#1C1C1C=currentColor\""
   },
   "repository": {
     "type": "git",
