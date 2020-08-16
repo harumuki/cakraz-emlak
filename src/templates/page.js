@@ -2,10 +2,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-
+import Title from '../components/Title'
 const PageTemplate = ({ data }) => (
   <Layout>
-    <h1>{data.strapiPage.title}</h1>
+    <Title>{data.strapiPage.title}</Title>
   </Layout>
 )
 
