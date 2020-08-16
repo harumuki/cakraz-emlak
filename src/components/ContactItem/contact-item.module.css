@@ -6,7 +6,8 @@
   transition: 300ms;
 
   &:hover {
-    background: rgba(var(--c-accent), 0.07)
+    background: rgba(var(--c-accent), 0.07);
+    color: rgba(var(--c-accent), 1);
   }
 }
 
