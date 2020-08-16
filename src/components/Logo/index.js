@@ -11,7 +11,7 @@ const Logo = () => (
         file(relativePath: {eq: "logo.png"}) {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
