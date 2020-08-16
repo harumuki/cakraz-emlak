@@ -10,7 +10,7 @@ const Advert = ({advertData}) => {
     <Link to={`/${advertData.slug}`}>
       <article className={styles.advert}>
         <div className={styles.hero}>
-          <Img className={styles.heroImage} fluid={advertData.thumbnail.childImageSharp.fluid} />
+          {advertData.thumbnail ? <Img className={styles.heroImage} fluid={advertData.thumbnail.childImageSharp.fluid} /> : 'Görsel yok'}
           <span className={styles.date}>{advertData.created_at}</span>
         </div>
         <h3>{advertData.title}</h3>
