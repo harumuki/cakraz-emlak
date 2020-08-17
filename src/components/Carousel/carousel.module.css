@@ -1,7 +1,10 @@
 .carousel {
   width: 100%;
-  position: relative;
+}
+
+.hero {
   background: #BDBDBD;
+  position: relative;
 }
 
 .image {
@@ -35,4 +38,22 @@
 .buttonBack {
   left: -50px;
   top: 50%;
+}
+
+.thumbnails {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr 1fr 1fr 1fr);
+  grid-gap: 20px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

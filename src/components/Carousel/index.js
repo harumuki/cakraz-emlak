@@ -5,6 +5,8 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
+  DotGroup,
+  Dot,
 } from 'pure-react-carousel'
 import cx from 'classnames'
 import { SliderNext, SliderPrevious } from '../icons'
@@ -14,27 +16,40 @@ import styles from './carousel.module.css'
 
 const Carousel = ({ images }) => {
   return (
-    <CarouselProvider
-      className={styles.carousel}
-      naturalSlideWidth={1310}
-      naturalSlideHeight={754}
-      totalSlides={images.length}
-      infinite={true}
-    >
-      <Slider>
-        {images.map(image => (
-          <Slide key={image.url}>
-            <img src={image.url} className={styles.image} />
-          </Slide>
-        ))}
-      </Slider>
-      <ButtonBack className={cx(styles.button, styles.buttonBack)}>
-        <SliderPrevious />
-      </ButtonBack>
-      <ButtonNext className={cx(styles.button, styles.buttonNext)}>
-        <SliderNext />
-      </ButtonNext>
-    </CarouselProvider>
+    <>
+      <CarouselProvider
+        className={styles.carousel}
+        naturalSlideWidth={1310}
+        naturalSlideHeight={754}
+        totalSlides={images.length}
+        infinite={true}
+      >
+        <div className={styles.hero}>
+          <Slider className={styles.slider}>
+            {images.map((image, index) => (
+              <Slide index={index} key={image.url}>
+                <img src={image.url} className={styles.image} />
+              </Slide>
+            ))}
+          </Slider>
+          <ButtonBack className={cx(styles.button, styles.buttonBack)}>
+            <SliderPrevious />
+          </ButtonBack>
+          <ButtonNext className={cx(styles.button, styles.buttonNext)}>
+            <SliderNext />
+          </ButtonNext>
+        </div>
+        <div className={styles.thumbnails}>
+          {images.map((image, index) => {
+            return (
+              <Dot slide={index} className={styles.thumbnail}>
+                <img src={image.url} />
+              </Dot>
+            )
+          })}
+        </div>
+      </CarouselProvider>
+    </>
   )
 }
 
