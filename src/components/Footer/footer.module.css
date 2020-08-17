@@ -2,10 +2,12 @@
   background: #fff;
   height: 185px;
   padding-top: 42.5px;
+  margin-top: 150px;
+  box-shadow: -4px 0px 30px rgba(40, 40, 91, 0.05);
 }
 
 .info {
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
 }

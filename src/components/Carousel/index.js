@@ -16,7 +16,7 @@ const Carousel = ({ images }) => {
   return (
     <CarouselProvider
       className={styles.carousel}
-      naturalSlideWidth={1340}
+      naturalSlideWidth={1310}
       naturalSlideHeight={754}
       totalSlides={images.length}
       infinite={true}
