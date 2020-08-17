@@ -10,15 +10,11 @@ const PageTemplate = () => (
   <StaticQuery
     query={graphql`
       {
-        allStrapiPage(filter: { id: { eq: "$id" } }) {
-          edges {
-            node {
-              id
-              description
-              slug
-              title
-            }
-          }
+        strapiPage(id: { eq: "$id" }) {
+          title
+          slug
+          id
+          description
         }
       }
     `}

@@ -9,30 +9,26 @@ const AdvertTemplate = () => {
     <StaticQuery
       query={graphql`
         {
-          allStrapiAdvert(filter: { id: { eq: "$id" } }) {
-            edges {
-              node {
-                id
-                slug
-                title
-                type
-                size
-                roomcount
-                price
-                location
-                images {
-                  url
-                }
-                heating
-                furnished
-                floorcurrent
-                floorcount
-                description
-                created_at
-                buildage
-                bathcount
-              }
+          strapiAdvert(id: { eq: "$id" }) {
+            id
+            slug
+            title
+            type
+            size
+            roomcount
+            price
+            location
+            images {
+              url
             }
+            heating
+            furnished
+            floorcurrent
+            floorcount
+            description
+            created_at
+            buildage
+            bathcount
           }
         }
       `}
