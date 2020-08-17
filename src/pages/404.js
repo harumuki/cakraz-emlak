@@ -1,10 +1,18 @@
-import React from "react"
+import React from 'react'
+import Layout from '../components/Layout'
+import Container from '../components/Container'
+import Error from '../components/Error'
 
 const NotFoundPage = () => (
-  <>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </>
+  <Layout>
+    <Container>
+      <Error
+        code="404"
+        title="Aradığınız sayfayı bulamıyoruz."
+        content="Aradığınız sayfa kaldırılmış, isim değiştirilmiş veya geçici olarak kullanılamıyor olabilir."
+      />
+    </Container>
+  </Layout>
 )
 
 export default NotFoundPage
