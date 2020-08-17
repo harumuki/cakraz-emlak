@@ -5,8 +5,7 @@
 }
 
 .info {
+  width: 80%;
   display: flex;
-  & a + a {
-    margin-left: 125px;
-  }
+  justify-content: space-between;
 }
