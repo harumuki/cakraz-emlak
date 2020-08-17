@@ -21,9 +21,9 @@ const Footer = () => {
       <Container flex>
         <Logo />
         <div className={styles.info}>
-          {data.strapiHomepage.phone && <ContactItem icon="Phone" title="Telefon" value={data.strapiHomepage.phone} />}
-          {data.strapiHomepage.location && <ContactItem icon="Location" title="Adres" value={data.strapiHomepage.location} />}
-          {data.strapiHomepage.email && <ContactItem icon="Email" title="Email" value={data.strapiHomepage.email} />}
+          {data.strapiHomepage && data.strapiHomepage.phone && <ContactItem icon="Phone" title="Telefon" value={data.strapiHomepage.phone} />}
+          {data.strapiHomepage && data.strapiHomepage.location && <ContactItem icon="Location" title="Adres" value={data.strapiHomepage.location} />}
+          {data.strapiHomepage && data.strapiHomepage.email && <ContactItem icon="Email" title="Email" value={data.strapiHomepage.email} />}
         </div>
       </Container>
     </footer>
