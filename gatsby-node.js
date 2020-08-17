@@ -41,7 +41,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       incomplex: Boolean
       heating: String
       thumbnail: File
-      images: [File]
+      images: Images
       created_at: Date
     }
     type StrapiPage implements Node {
@@ -56,6 +56,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       location: String
       email: String
       heroimg: File
+    }
+    type Images implements Node {
+      url: String
     }
   `
   createTypes(typeDefs)

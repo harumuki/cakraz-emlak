@@ -23,8 +23,8 @@ const Carousel = ({ images }) => {
     >
       <Slider>
         {images.map(image => (
-          <Slide key={image.publicURL}>
-            <img src={image.publicURL} className={styles.image} />
+          <Slide key={image.url}>
+            <img src={image.url} className={styles.image} />
           </Slide>
         ))}
       </Slider>
