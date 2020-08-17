@@ -1,0 +1,5 @@
+.stack {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr 1fr 1fr);
+  grid-gap: 50px;
+}

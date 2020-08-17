@@ -3,8 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Container from '../Container'
 import Title from '../Title'
 import Advert from '../Advert'
-
-import styles from './highlights.module.css'
+import Stack from '../Stack'
 
 const Highlights = () => {
   const data = useStaticQuery(graphql`
@@ -34,11 +33,11 @@ const Highlights = () => {
     <section>
       <Container>
         <Title>Öne Çıkan İlanlar</Title>
-        <div className={styles.highlightsWrapper}>
+        <Stack>
           {data.adverts && data.adverts.edges.map(advert => (
             <Advert key={advert.node.slug} advertData={advert.node} />
           ))}
-        </div>
+        </Stack>
       </Container>
     </section>
   )

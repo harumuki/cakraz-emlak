@@ -5,15 +5,18 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Advert from '../components/Advert'
 import Error from '../components/Error'
+import Stack from '../components/Stack'
 
 const RentPage = ({ data }) => {
   return (
     <Layout>
       <Container>
         <Title>Kiralık</Title>
-        {data.allStrapiAdvert.edges.length > 0 ? data.allStrapiAdvert.edges.map(advert => {
-          return <Advert key={advert.node.id} advertData={advert.node} />
-        }): <Error content="Yakında tekrar kontrol edin" title="Hiç kiralık ilan yok" />}
+        <Stack>
+          {data.allStrapiAdvert.edges.length > 0 ? data.allStrapiAdvert.edges.map(advert => {
+            return <Advert key={advert.node.id} advertData={advert.node} />
+          }): <Error content="Yakında tekrar kontrol edin" title="Hiç kiralık ilan yok" />}
+        </Stack>
       </Container>
     </Layout>
   )
@@ -32,6 +35,7 @@ export const query = graphql`
           type
           title
           slug
+          location
           thumbnail {
             childImageSharp {
               fluid {

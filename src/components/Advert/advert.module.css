@@ -1,5 +1,4 @@
 .advert {
-  width: 400px;
   height: 500px;
   padding: 20px;
   background: #fff;
@@ -27,7 +26,7 @@
 
 .heroImage {
   border-radius: 20px;
-  width: 360px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
 }
