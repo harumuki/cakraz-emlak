@@ -41,7 +41,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       incomplex: Boolean
       heating: String
       thumbnail: File
-      images: Images
+      images: [Images]
       created_at: Date
     }
     type StrapiPage implements Node {
