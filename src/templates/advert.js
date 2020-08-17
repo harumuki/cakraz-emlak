@@ -1,49 +1,44 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Carousel from '../components/Carousel'
 
-const AdvertTemplate = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          strapiAdvert(id: { eq: "$id" }) {
-            id
-            slug
-            title
-            type
-            size
-            roomcount
-            price
-            location
-            images {
-              url
-            }
-            heating
-            furnished
-            floorcurrent
-            floorcount
-            description
-            created_at
-            buildage
-            bathcount
-          }
-        }
-      `}
-      render={data => (
-        <Layout title={data.strapiAdvert.title}>
-          <Container>
-            {data.strapiAdvert.images.length > 0 && (
-              <Carousel images={data.strapiAdvert.images} />
-            )}
-            <h1>{data.strapiAdvert.title}</h1>
-          </Container>
-        </Layout>
+const AdvertTemplate = ({ data }) => (
+  <Layout title={data.strapiAdvert.title}>
+    <Container>
+      {data.strapiAdvert.images.length > 0 && (
+        <Carousel images={data.strapiAdvert.images} />
       )}
-    ></StaticQuery>
-  )
-}
+      <h1>{data.strapiAdvert.title}</h1>
+    </Container>
+  </Layout>
+)
 
 export default AdvertTemplate
+
+export const query = graphql`
+  query AdvertTemplate($id: String!) {
+    strapiAdvert(id: { eq: $id }) {
+      id
+      slug
+      title
+      description
+      location
+      price
+      type
+      roomcount
+      size
+      buildage
+      floorcount
+      floorcurrent
+      bathcount
+      furnished
+      incomplex
+      heating
+      images {
+        url
+      }
+    }
+  }
+`
