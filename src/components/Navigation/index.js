@@ -20,6 +20,8 @@ const Navigation = () => {
   return (
     <nav className={styles.navigation}>
       <Link to="/">Anasayfa</Link>
+      <Link to="/satilik">Satılık</Link>
+      <Link to="/kiralik">Kiralık</Link>
 
       {data.allStrapiPage.edges.length > 0 && data.allStrapiPage.edges.map(page => (
         <Link key={page.node.slug} to={`/${page.node.slug}`}>{page.node.title}</Link>
