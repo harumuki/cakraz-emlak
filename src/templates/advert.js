@@ -37,7 +37,7 @@ export const query = graphql`
       incomplex
       heating
       images {
-        url
+        publicURL
       }
     }
   }
