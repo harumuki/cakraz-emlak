@@ -8,6 +8,7 @@ import {
   DotGroup,
   Dot,
 } from 'pure-react-carousel'
+import Img from 'gatsby-image'
 import cx from 'classnames'
 import { SliderNext, SliderPrevious } from '../icons'
 
@@ -28,7 +29,7 @@ const Carousel = ({ images }) => {
           <Slider className={styles.slider}>
             {images.map((image, index) => (
               <Slide index={index} key={image.url}>
-                <img src={image.url} className={styles.image} />
+                <Img fluid={image.imageFile.childImageSharp.fluid} className={styles.image} />
               </Slide>
             ))}
           </Slider>

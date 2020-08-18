@@ -41,7 +41,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       incomplex: Boolean
       heating: String
       thumbnail: File
-      images: [Images]
+      images: Images
       created_at: Date
     }
     type StrapiPage implements Node {
@@ -58,7 +58,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       heroimg: File
     }
     type Images implements Node {
-      url: String
+      imageFile: [File]
     }
   `
   createTypes(typeDefs)
@@ -117,3 +117,33 @@ exports.createPages = ({ actions, graphql }) => {
   
   return Promise.all([getAdverts, getPages])
 };
+
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
+
+exports.createResolvers = ({
+  actions,
+  cache,
+  createNodeId,
+  createResolvers,
+  store,
+  reporter,
+}) => {
+  const { createNode } = actions
+  createResolvers({
+    StrapiAdvertImages: {
+      imageFile: {
+        type: `File`,
+        resolve(source, args, context, info) {
+          return createRemoteFileNode({
+            url: `${source.url}`,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
+    },
+  })
+}

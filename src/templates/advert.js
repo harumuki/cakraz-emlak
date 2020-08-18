@@ -37,7 +37,13 @@ export const query = graphql`
       incomplex
       heating
       images {
-        url
+        imageFile {
+          childImageSharp {
+            fluid(maxWidth: 1340) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
