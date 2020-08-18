@@ -35,7 +35,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          created_at
+          created_at(locale: "tr", formatString: "DD MMMM YYYY")
           id
           price
           type
