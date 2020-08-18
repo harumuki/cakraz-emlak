@@ -1,6 +1,6 @@
 .error {
   text-align: center;
-  height: calc((100vh - 130px) - 185px);
+  height: calc(100vh - 450px);
   display: flex;
   flex-direction: column;
   align-items: center;

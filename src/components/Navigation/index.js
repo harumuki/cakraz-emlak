@@ -6,7 +6,7 @@ import styles from './navigation.module.css'
 const Navigation = () => {
   const data = useStaticQuery(graphql`
     {
-      allStrapiPage {
+      allStrapiPage(filter: { published: { eq: true } }) {
         edges {
           node {
             title

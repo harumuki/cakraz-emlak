@@ -4,11 +4,12 @@ import Container from '../Container'
 import Title from '../Title'
 import Advert from '../Advert'
 import Stack from '../Stack'
+import Error from '../Error'
 
 const Highlights = () => {
   const data = useStaticQuery(graphql`
     {
-      adverts: allStrapiAdvert(limit: 3) {
+      adverts: allStrapiAdvert(limit: 3, filter: { published: { eq: true } }) {
         edges {
           node {
             id
@@ -16,7 +17,7 @@ const Highlights = () => {
             title
             price
             location
-            created_at
+            created_at(locale: "tr", formatString: "DD MMMM YYYY")
             thumbnail {
               childImageSharp {
                 fluid {
@@ -30,6 +31,7 @@ const Highlights = () => {
     }
   `)
   return (
+    data.adverts.edges.length > 0 ? (
     <section>
       <Container>
         <Title>Öne Çıkan İlanlar</Title>
@@ -40,6 +42,7 @@ const Highlights = () => {
         </Stack>
       </Container>
     </section>
+    ) : <Error title="Hiç ilan yok" content="Daha sonra tekrar kontrol edin." />
   )
 }
 

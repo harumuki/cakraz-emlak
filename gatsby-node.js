@@ -6,7 +6,9 @@
 
 // You can delete this file if you're not using it
 
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 const path = require(`path`);
+
 
 const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   resolve(
@@ -20,56 +22,12 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
   )
 });
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  const typeDefs = `
-    type StrapiAdvert implements Node {
-      id: String
-      slug: String
-      title: String
-      description: String
-      location: String
-      price: String
-      type: String
-      roomcount: String
-      size: String
-      buildage: Int
-      floorcount: String
-      floorcurrent: String
-      bathcount: Int
-      furnished: Boolean
-      incomplex: Boolean
-      heating: String
-      thumbnail: File
-      images: Images
-      created_at: Date
-    }
-    type StrapiPage implements Node {
-      id: String
-      title: String
-      slug: String
-      description: String
-    }
-    type StrapiHomepage implements Node {
-      title: String
-      phone: String
-      location: String
-      email: String
-      heroimg: File
-    }
-    type Images implements Node {
-      imageFile: [File]
-    }
-  `
-  createTypes(typeDefs)
-}
-
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
   
   const getAdverts = makeRequest(graphql, `
     {
-      allStrapiAdvert {
+      allStrapiAdvert(filter: {published: {eq: true}}) {
         edges {
           node {
             id
@@ -93,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const getPages = makeRequest(graphql, `
     {
-      allStrapiPage {
+      allStrapiPage(filter: {published: {eq: true}}) {
         edges {
           node {
             id
@@ -117,8 +75,6 @@ exports.createPages = ({ actions, graphql }) => {
   
   return Promise.all([getAdverts, getPages])
 };
-
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 
 exports.createResolvers = ({
   actions,

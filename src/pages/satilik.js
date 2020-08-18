@@ -11,12 +11,16 @@ const SalePage = ({ data }) => {
   return (
     <Layout>
       <Container>
-          {data.allStrapiAdvert.edges.length > 0 && <Title>Satılık</Title>}
-        <Stack>
-          {data.allStrapiAdvert && data.allStrapiAdvert.edges.length > 0 ? data.allStrapiAdvert.edges.map(advert => {
-            return <Advert key={advert.node.id} advertData={advert.node} />
-          }): <Error content="Yakında tekrar kontrol edin" title="Hiç satılık ilan yok" />}
-        </Stack>
+        {data.allStrapiAdvert.edges.length > 0 ? (
+          <>
+            <Title>Satılık</Title>
+            <Stack>
+              {data.allStrapiAdvert.edges.map(advert => (
+                <Advert key={advert.node.id} advertData={advert.node} />
+              ))}
+            </Stack>
+          </>
+        ) : <Error content="Yakında tekrar kontrol edin" title="Hiç satılık ilan yok" /> }
       </Container>
     </Layout>
   )
@@ -26,7 +30,9 @@ export default SalePage
 
 export const query = graphql`
   {
-    allStrapiAdvert(filter: { type: { eq: "satilik" } }) {
+    allStrapiAdvert(
+      filter: { type: { eq: "satilik" }, published: { eq: true } }
+    ) {
       edges {
         node {
           created_at
