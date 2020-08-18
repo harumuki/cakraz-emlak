@@ -44,7 +44,7 @@ const Carousel = ({ images }) => {
           {images.map((image, index) => {
             return (
               <Dot slide={index} className={styles.thumbnail}>
-                <img src={image.url} />
+                <Img fluid={image.imageFile.childImageSharp.fluid} />
               </Dot>
             )
           })}
