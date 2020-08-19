@@ -36,7 +36,7 @@ const Carousel = ({ images }) => {
   }
   const thumbs = {
     infinite: false,
-    slidesToShow: window.innerWidth >= 1440 ? 7 : 2,
+    slidesToShow: 7,
     slidesToScroll: 1,
     swipeToSlide: true,
     focusOnSelect: true,
