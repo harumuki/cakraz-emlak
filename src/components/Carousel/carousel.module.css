@@ -41,7 +41,7 @@
 
   & :global(.slick-slide) {
     width: 160px;
-    height: 102px;
+    height: 106px;
     margin-left: 20px;
     border: 3px solid transparent;
   }
