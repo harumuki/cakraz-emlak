@@ -1,55 +1,81 @@
-import React from 'react'
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  DotGroup,
-  Dot,
-} from 'pure-react-carousel'
+import React, { useState } from 'react'
+import Slider from 'react-slick'
 import Img from 'gatsby-image'
 import cx from 'classnames'
 import { SliderNext, SliderPrevious } from '../icons'
 
-import 'pure-react-carousel/dist/react-carousel.es.css'
+import 'slick-carousel/slick/slick.css'
+
 import styles from './carousel.module.css'
 
 const Carousel = ({ images }) => {
+  const [nav1, setNav1] = useState()
+  const [nav2, setNav2] = useState()
+
+  const PrevArrow = ({ className, style, onClick }) => (
+    <button className={cx(styles.arrowPrev, className)} onClick={onClick}>
+      <SliderPrevious />
+    </button>
+  )
+
+  const NextArrow = ({ className, style, onClick }) => (
+    <button className={cx(styles.arrowNext, className)} onClick={onClick}>
+      <SliderNext />
+    </button>
+  )
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    height: 480,
+    asNavFor: nav2,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  }
+  const thumbs = {
+    infinite: false,
+    slidesToShow: window.innerWidth >= 1440 ? 7 : 2,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    focusOnSelect: true,
+    infinite: false,
+    arrows: false,
+    asNavFor: nav1,
+    variableWidth: true,
+  }
+
   return (
     <>
-      <CarouselProvider
+      <Slider
+        {...settings}
+        ref={slider1 => setNav1(slider1)}
         className={styles.carousel}
-        naturalSlideWidth={1310}
-        naturalSlideHeight={754}
-        totalSlides={images.length}
-        infinite={true}
       >
-        <div className={styles.hero}>
-          <Slider className={styles.slider}>
-            {images.map((image, index) => (
-              <Slide index={index} key={image.url}>
-                <Img fluid={image.imageFile.childImageSharp.fluid} className={styles.image} />
-              </Slide>
-            ))}
-          </Slider>
-          <ButtonBack className={cx(styles.button, styles.buttonBack)}>
-            <SliderPrevious />
-          </ButtonBack>
-          <ButtonNext className={cx(styles.button, styles.buttonNext)}>
-            <SliderNext />
-          </ButtonNext>
-        </div>
-        <div className={styles.thumbnails}>
-          {images.map((image, index) => {
-            return (
-              <Dot slide={index} className={styles.thumbnail}>
-                <Img fluid={image.imageFile.childImageSharp.fluid} />
-              </Dot>
-            )
-          })}
-        </div>
-      </CarouselProvider>
+        {images.map((node, index) => (
+          <Img
+            key={index}
+            fluid={node.imageFile.childImageSharp.full}
+            imgStyle={{ objectFit: 'contain' }}
+            className={styles.carouselImg}
+          />
+        ))}
+      </Slider>
+
+      <Slider
+        {...thumbs}
+        ref={slider2 => setNav2(slider2)}
+        className={styles.thumbnails}
+      >
+        {images.map((node, index) => (
+          <Img
+            key={index}
+            fluid={node.imageFile.childImageSharp.thumb}
+            className={styles.thumb}
+          />
+        ))}
+      </Slider>
     </>
   )
 }

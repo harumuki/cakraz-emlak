@@ -37,9 +37,13 @@ export const query = graphql`
       incomplex
       heating
       images {
+        url
         imageFile {
           childImageSharp {
-            fluid(maxWidth: 1340) {
+            thumb: fluid(maxWidth: 270, maxHeight: 270) {
+              ...GatsbyImageSharpFluid
+            }
+            full: fluid(maxWidth: 1440) {
               ...GatsbyImageSharpFluid
             }
           }
