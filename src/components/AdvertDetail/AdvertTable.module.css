@@ -1,0 +1,13 @@
+.body {
+  margin-top: 30px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr;
+  grid-gap: 20px;
+
+  & span {
+    font-weight: var(--fw-medium)
+  }
+}

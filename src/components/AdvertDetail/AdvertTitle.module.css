@@ -1,0 +1,33 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 50px;
+  grid-row-gap: 8px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-big);
+}
+
+.price {
+  font-size: var(--fs-big);
+  font-weight: var(--fw-bold);
+  color: rgba(var(--c-accent), 1);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  color: rgba(var(--c-accent), 1);
+  font-size: 24px;
+
+  & span {
+    color: rgba(var(--c-text));
+    font-size: var(--fs-small);
+    margin-left: 8px;
+  }
+}

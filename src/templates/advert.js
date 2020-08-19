@@ -3,14 +3,20 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Carousel from '../components/Carousel'
+import { AdvertTitle, AdvertTable } from '../components/AdvertDetail'
+import TextBox from '../components/TextBox'
 
 const AdvertTemplate = ({ data }) => (
   <Layout title={data.strapiAdvert.title}>
     <Container>
+      <AdvertTitle advert={data.strapiAdvert} />
       {data.strapiAdvert.images.length > 0 && (
         <Carousel images={data.strapiAdvert.images} />
       )}
-      <h1>{data.strapiAdvert.title}</h1>
+      <AdvertTable advert={data.strapiAdvert} />
+      <TextBox title="İlan Açıklaması">
+        <p>{data.strapiAdvert.description}</p>
+      </TextBox>
     </Container>
   </Layout>
 )
@@ -23,6 +29,7 @@ export const query = graphql`
       id
       slug
       title
+      created_at(locale: "tr", formatString: "DD MMMM YYYY")
       description
       location
       price
