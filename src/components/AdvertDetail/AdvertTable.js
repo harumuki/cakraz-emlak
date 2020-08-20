@@ -25,10 +25,12 @@ const AdvertTable = ({ advert }) => {
         <span>{advert.incomplex ? 'Evet' : 'Hayır'}</span>
         <label>Kat Sayısı:</label>
         <span>{advert.floorcount}</span>
-        <label>Isıtma:</label>
-        <span>{advert.heating}</span>
+        <label>Kullanım Durumu:</label>
+        <span>{advert.status}</span>
         <label>Bulunduğu Kat:</label>
         <span>{advert.floorcurrent}</span>
+        <label>Isıtma:</label>
+        <span>{advert.heating}</span>
       </div>
     </TextBox>
   )

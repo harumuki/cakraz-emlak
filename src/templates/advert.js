@@ -43,6 +43,7 @@ export const query = graphql`
       furnished
       incomplex
       heating
+      status
       images {
         url
         localFile {
