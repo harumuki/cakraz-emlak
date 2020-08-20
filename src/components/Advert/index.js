@@ -23,7 +23,10 @@ const Advert = ({ advertData }) => {
               alt={advertData.title}
             />
           )}
-          <span className={styles.date}>{advertData.created_at}</span>
+          <div className={styles.badges}>
+            <span>{advertData.created_at}</span>
+            <span>{advertData.type == 'satilik' ? 'Satılık' : 'Kiralık'}</span>
+          </div>
         </div>
         <h3>{advertData.title}</h3>
         <div className={styles.footer}>

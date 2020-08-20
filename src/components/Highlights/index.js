@@ -17,6 +17,7 @@ const Highlights = () => {
             title
             price
             location
+            type
             created_at(locale: "tr", formatString: "DD MMMM YYYY")
             thumbnail {
               localFile {

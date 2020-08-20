@@ -33,15 +33,26 @@
   object-fit: cover;
 }
 
-.date {
+.badges {
   position: absolute;
   right: 17px;
   top: 16px;
-  background: rgba(28, 28, 28, 0.35);
-  border-radius: 4px;
-  font-size: var(--fs-small);
-  padding: 4px 15px;
-  color: #fff;
+  
+
+  & span {
+    background: rgba(28, 28, 28, 0.35);
+    border-radius: 4px;
+    font-size: var(--fs-small);
+    padding: 4px 15px;
+    color: #fff;
+    text-align: center;
+    display: block;
+
+    &:nth-child(2) {
+      margin-top: 8px;
+      background: rgba(var(--c-accent), 1)
+    }
+  }
 }
 
 .footer {
