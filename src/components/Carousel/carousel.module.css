@@ -39,7 +39,7 @@
 .arrowPrev {
   left: -60px;
 
-  @media (--mobile) {
+  @media (--laptop) {
     left: 10px;
   }
 }
@@ -47,7 +47,7 @@
 .arrowNext {
   right: -60px;
 
-  @media (--mobile) {
+  @media (--laptop) {
     right: 10px;
   }
 }

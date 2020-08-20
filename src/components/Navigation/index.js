@@ -25,15 +25,14 @@ const Navigation = () => {
   return (
     <>
       {size.width <= CONSTS.MOBILE_SIZE && (
-        <div className={styles.icon}>
-          {console.log(toggle)}
+        <button type="button" className={styles.icon}>
           {!toggle && (
             <Hamburger onClick={() => setToggle(true)} />
           )}
           {toggle && (
             <Times onClick={() => setToggle(false)} />
           )}
-        </div>
+        </button>
       )}
       <nav
         className={cx(

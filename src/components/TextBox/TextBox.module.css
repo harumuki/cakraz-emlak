@@ -2,6 +2,10 @@
   border: 1px solid rgba(var(--c-light), 1);
   border-radius: 4px;
   padding: 25px 40px;
+
+  @media (--mobile) {
+    padding: 20px;
+  }
 }
 
 .title {
