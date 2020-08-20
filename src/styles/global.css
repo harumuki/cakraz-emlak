@@ -1,3 +1,5 @@
+@custom-media --mobile (max-width: 960px);
+
 :root {
   --c-accent: 22, 211, 61;
   --c-text: 28, 28, 28;

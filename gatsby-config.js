@@ -52,13 +52,16 @@ module.exports = {
         postCssPlugins: [
           require(`postcss-preset-env`)({
             stage: 2,
+            importFrom: 'src/styles/global.css',
             features: {
               'nesting-rules': true,
+              'custom-media-queries': true,
             },
           }),
         ],
       },
     },
+    `gatsby-plugin-css-customs`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
