@@ -8,9 +8,7 @@ import styles from './navigation.module.css'
 
 const Navigation = () => {
   const [toggle, setToggle] = useState(false)
-
   const size = useWindowSize()
-
   const data = useStaticQuery(graphql`
     {
       allStrapiPage(filter: { published: { eq: true } }) {
@@ -28,6 +26,7 @@ const Navigation = () => {
     <>
       {size.width <= 960 && (
         <div className={styles.icon}>
+          {console.log(toggle)}
           {!toggle && (
             <Hamburger onClick={() => setToggle(true)} />
           )}
@@ -39,7 +38,8 @@ const Navigation = () => {
       <nav
         className={cx(
           styles.navigation,
-          size.width <= 960 && !toggle && styles.hidden
+          size.width <= 960 && styles.hidden,
+          toggle && styles.active
         )}
       >
         <Link to="/">Anasayfa</Link>

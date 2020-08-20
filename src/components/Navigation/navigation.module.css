@@ -21,6 +21,10 @@
     display: none;
   }
 
+  &.active {
+    display: flex;
+  }
+
   @media (--mobile) {
     flex-direction: column;
     align-items: flex-end;
