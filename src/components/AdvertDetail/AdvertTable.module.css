@@ -7,7 +7,11 @@
   grid-template-columns: auto 1fr auto 1fr;
   grid-gap: 20px;
 
-  & span {
+  & strong {
     font-weight: var(--fw-medium)
+  }
+
+  @media (--mobile) {
+    grid-template-columns: auto 1fr
   }
 }

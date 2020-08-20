@@ -7,30 +7,30 @@ const AdvertTable = ({ advert }) => {
   return (
     <TextBox title="İlan Bilgileri" className={styles.body}>
       <div className={styles.table}>
-        <label>İlan Türü:</label>
-        <span>{advert.type === 'kiralık' ? 'Kiralık' : 'Satılık'}</span>
-        <label>İlan Oluşturma Tarihi:</label>
-        <span>{advert.created_at}</span>
-        <label>Oda Sayısı:</label>
-        <span>{advert.roomcount}</span>
-        <label>Banyo Sayısı:</label>
-        <span>{advert.bathcount}</span>
-        <label>Metrekaresi (Brüt):</label>
-        <span>{advert.size}</span>
-        <label>Eşyalı:</label>
-        <span>{advert.furnished ? 'Evet' : 'Hayır'}</span>
-        <label>Bina Yaşı:</label>
-        <span>{advert.buildage}</span>
-        <label>Site İçerisinde:</label>
-        <span>{advert.incomplex ? 'Evet' : 'Hayır'}</span>
-        <label>Kat Sayısı:</label>
-        <span>{advert.floorcount}</span>
-        <label>Kullanım Durumu:</label>
-        <span>{advert.status}</span>
-        <label>Bulunduğu Kat:</label>
-        <span>{advert.floorcurrent}</span>
-        <label>Isıtma:</label>
-        <span>{advert.heating}</span>
+        <span>İlan Türü:</span>
+        <strong>{advert.type === 'kiralık' ? 'Kiralık' : 'Satılık'}</strong>
+        <span>İlan Oluşturma Tarihi:</span>
+        <strong>{advert.created_at}</strong>
+        <span>Oda Sayısı:</span>
+        <strong>{advert.roomcount}</strong>
+        <span>Banyo Sayısı:</span>
+        <strong>{advert.bathcount}</strong>
+        <span>Metrekaresi (Brüt):</span>
+        <strong>{advert.size}</strong>
+        <span>Eşyalı:</span>
+        <strong>{advert.furnished ? 'Evet' : 'Hayır'}</strong>
+        <span>Bina Yaşı:</span>
+        <strong>{advert.buildage}</strong>
+        <span>Site İçerisinde:</span>
+        <strong>{advert.incomplex ? 'Evet' : 'Hayır'}</strong>
+        <span>Kat Sayısı:</span>
+        <strong>{advert.floorcount}</strong>
+        <span>Kullanım Durumu:</span>
+        <strong>{advert.status}</strong>
+        <span>Bulunduğu Kat:</span>
+        <strong>{advert.floorcurrent}</strong>
+        <span>Isıtma:</span>
+        <strong>{advert.heating}</strong>
       </div>
     </TextBox>
   )
