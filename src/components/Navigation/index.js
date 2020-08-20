@@ -63,6 +63,8 @@ const Navigation = () => {
               {page.node.title}
             </Link>
           ))}
+
+        <Link to="/iletisim">İletişim</Link>
       </nav>
     </>
   )
