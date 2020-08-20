@@ -16,4 +16,40 @@
   & a + a {
     margin-left: 24px;
   }
+
+  &.hidden {
+    display: none;
+  }
+
+  @media (--mobile) {
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 1;
+    top: 130px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 20px;
+    padding-top: 10px;
+    box-shadow: 0px 20px 12px rgba(28, 28, 28, 0.15);
+    
+
+    & a {
+      font-size: var(--fs-medium);
+      display: block;
+    }
+
+    & a + a {
+      margin-top: 12px;
+    }
+  }
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: rgba(var(--c-text));
 }

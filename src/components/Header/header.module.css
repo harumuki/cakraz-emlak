@@ -3,6 +3,7 @@
   background-color: #fff;
   height: 130px;
   padding-top: 15px;
+  position: relative;
 
   & a {
     transition: 150ms;
@@ -10,5 +11,13 @@
 
   & a:hover {
     color: rgba(var(--c-accent), 1)
+  }
+
+  @media (--mobile) {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }
