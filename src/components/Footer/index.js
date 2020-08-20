@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Container from '../Container'
 import Logo from '../Logo'
 import ContactItem from '../ContactItem'
-
+import { Location, Phone, Email } from '../icons'
 import styles from './footer.module.css'
 
 const Footer = () => {
@@ -23,9 +23,27 @@ const Footer = () => {
           <Logo solid />
         </div>
         <div className={styles.info}>
-          {data.strapiHomepage && data.strapiHomepage.phone && <ContactItem icon="Phone" title="Telefon" value={data.strapiHomepage.phone} />}
-          {data.strapiHomepage && data.strapiHomepage.location && <ContactItem icon="Location" title="Adres" value={data.strapiHomepage.location} />}
-          {data.strapiHomepage && data.strapiHomepage.email && <ContactItem icon="Email" title="Email" value={data.strapiHomepage.email} />}
+          <ContactItem
+            link={'tel:' + data.strapiHomepage.phone}
+            title="Telefon"
+            value={data.strapiHomepage.phone}
+          >
+            <Phone />
+          </ContactItem>
+          <ContactItem
+            link="/iletisim"
+            title="Adres"
+            value={data.strapiHomepage.location}
+          >
+            <Location />
+          </ContactItem>
+          <ContactItem
+            link={'mailto:'+data.strapiHomepage.email}
+            title="Email"
+            value={data.strapiHomepage.email}
+          >
+            <Email />
+          </ContactItem>
         </div>
       </Container>
     </footer>

@@ -1,21 +1,29 @@
 import React from 'react'
-import { Phone, Location, Email } from '../icons'
+import { Link } from 'gatsby'
 
 import styles from './contact-item.module.css'
 
-const ContactItem = ({icon, title, value}) => {
-  return (
-    <a href={title === 'Telefon' ? `tel:` + value : title === 'Email' ? `mailto:` + value : '/#'}>
+const ContactItem = ({ children, title, value, link }) => {
+  return title !== 'Adres' ? (
+    <a href={link}>
       <div className={styles.item}>
-        {
-          icon === 'Phone' ? <Phone className={styles.icon} /> : icon === 'Location' ? <Location className={styles.icon} /> : icon === 'Email' ? <Email className={styles.icon} /> : <div/>
-        }
+        {children}
         <div className={styles.info}>
           <span>{title}</span>
           <span>{value}</span>
         </div>
       </div>
     </a>
+  ) : (
+    <Link to={link}>
+      <div className={styles.item}>
+        {children}
+        <div className={styles.info}>
+          <span>{title}</span>
+          <span>{value}</span>
+        </div>
+      </div>
+    </Link>
   )
 }
 
