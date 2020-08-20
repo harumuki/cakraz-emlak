@@ -56,7 +56,7 @@ const Carousel = ({ images }) => {
         {images.map((node, index) => (
           <Img
             key={index}
-            fluid={node.imageFile.childImageSharp.full}
+            fluid={node.localFile.childImageSharp.full}
             imgStyle={{ objectFit: 'contain' }}
             className={styles.carouselImg}
           />
@@ -71,7 +71,7 @@ const Carousel = ({ images }) => {
         {images.map((node, index) => (
           <Img
             key={index}
-            fluid={node.imageFile.childImageSharp.thumb}
+            fluid={node.localFile.childImageSharp.thumb}
             className={styles.thumb}
           />
         ))}

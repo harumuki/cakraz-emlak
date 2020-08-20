@@ -11,10 +11,10 @@ const Advert = ({ advertData }) => {
     <Link to={`/${advertData.slug}`} alt={advertData.title}>
       <article className={styles.advert}>
         <div className={styles.hero}>
-          {advertData?.thumbnail?.childImageSharp ? (
+          {advertData?.thumbnail?.localFile?.childImageSharp ? (
             <Img
               className={styles.heroImage}
-              fluid={advertData.thumbnail.childImageSharp.fluid}
+              fluid={advertData.thumbnail.localFile.childImageSharp.fluid}
               alt={advertData.alt}
             />
           ) : (

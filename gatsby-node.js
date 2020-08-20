@@ -75,31 +75,3 @@ exports.createPages = ({ actions, graphql }) => {
   
   return Promise.all([getAdverts, getPages])
 };
-
-exports.createResolvers = ({
-  actions,
-  cache,
-  createNodeId,
-  createResolvers,
-  store,
-  reporter,
-}) => {
-  const { createNode } = actions
-  createResolvers({
-    StrapiAdvertImages: {
-      imageFile: {
-        type: `File`,
-        resolve(source, args, context, info) {
-          return createRemoteFileNode({
-            url: `${source.url}`,
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-          })
-        },
-      },
-    },
-  })
-}

@@ -19,9 +19,11 @@ const Highlights = () => {
             location
             created_at(locale: "tr", formatString: "DD MMMM YYYY")
             thumbnail {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
+              localFile {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }

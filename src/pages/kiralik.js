@@ -41,9 +41,11 @@ export const query = graphql`
           slug
           location
           thumbnail {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }

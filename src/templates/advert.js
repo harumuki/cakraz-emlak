@@ -45,7 +45,7 @@ export const query = graphql`
       heating
       images {
         url
-        imageFile {
+        localFile {
           childImageSharp {
             thumb: fluid(maxWidth: 270, maxHeight: 270) {
               ...GatsbyImageSharpFluid
