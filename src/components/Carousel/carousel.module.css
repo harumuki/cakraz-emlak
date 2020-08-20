@@ -2,10 +2,18 @@
   background: rgba(var(--c-light), 1);
   position: relative;
   height: 640px;
+
+  @media (--mobile) {
+    height: 350px;
+  }
 }
 
 .carouselImg {
   height: 640px;
+
+  @media (--mobile) {
+    height: 350px;
+  }
 }
 
 .arrowPrev,
@@ -22,14 +30,26 @@
   top: 50%;
   z-index: 1;
   cursor: pointer;
+
+  @media (--mobile) {
+    color: #fff;
+  }
 }
 
 .arrowPrev {
   left: -60px;
+
+  @media (--mobile) {
+    left: 10px;
+  }
 }
 
 .arrowNext {
   right: -60px;
+
+  @media (--mobile) {
+    right: 10px;
+  }
 }
 
 .thumbnails {

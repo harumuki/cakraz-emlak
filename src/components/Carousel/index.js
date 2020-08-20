@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import Img from 'gatsby-image'
 import cx from 'classnames'
 import { SliderNext, SliderPrevious } from '../icons'
+import useWindowSize from '../../hooks/useWindowSize'
 
 import 'slick-carousel/slick/slick.css'
 
@@ -11,6 +12,8 @@ import styles from './carousel.module.css'
 const Carousel = ({ images }) => {
   const [nav1, setNav1] = useState()
   const [nav2, setNav2] = useState()
+
+  const size = useWindowSize()
 
   const PrevArrow = ({ className, style, onClick }) => (
     <button className={cx(styles.arrowPrev, className)} onClick={onClick}>
@@ -36,7 +39,7 @@ const Carousel = ({ images }) => {
   }
   const thumbs = {
     infinite: false,
-    slidesToShow: 7,
+    slidesToShow: size.width <= 768 ? 2 : size.width <= 960 ? 4 : 7,
     slidesToScroll: 1,
     swipeToSlide: true,
     focusOnSelect: true,
