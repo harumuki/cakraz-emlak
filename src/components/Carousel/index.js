@@ -44,6 +44,8 @@ const Carousel = ({ images }) => {
     arrows: false,
     asNavFor: nav1,
     variableWidth: true,
+    centerMode: true,
+    infinite: true
   }
 
   return (
@@ -55,7 +57,7 @@ const Carousel = ({ images }) => {
       >
         {images.map((node, index) => (
           <Img
-            key={index}
+            key={node.url}
             fluid={node.localFile.childImageSharp.full}
             imgStyle={{ objectFit: 'contain' }}
             className={styles.carouselImg}
@@ -70,7 +72,7 @@ const Carousel = ({ images }) => {
       >
         {images.map((node, index) => (
           <Img
-            key={index}
+            key={node.url}
             fluid={node.localFile.childImageSharp.thumb}
             className={styles.thumb}
           />
