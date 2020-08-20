@@ -16,6 +16,10 @@
   }
 }
 
+:global(.slick-disabled) {
+  color: rgba(var(--c-light), 1)!important;
+}
+
 .arrowPrev,
 .arrowNext {
   height: 1em;
