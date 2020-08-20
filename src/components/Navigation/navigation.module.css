@@ -18,11 +18,17 @@
   }
 
   &.hidden {
-    display: none;
+    opacity: 0;
+    transform: translateY(-30px) scaleY(0.5);
+    transform-origin: top;
+    transition: 300ms all;
+    pointer-events: none;
   }
 
   &.active {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0)  scaleY(1);
+    pointer-events: unset;
   }
 
   @media (--mobile) {

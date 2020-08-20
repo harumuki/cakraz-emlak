@@ -3,7 +3,7 @@ import cx from 'classnames'
 import useWindowSize from '../../hooks/useWindowSize'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Hamburger, Times } from '../icons'
-
+import CONSTS from '../../consts'
 import styles from './navigation.module.css'
 
 const Navigation = () => {
@@ -24,7 +24,7 @@ const Navigation = () => {
 
   return (
     <>
-      {size.width <= 960 && (
+      {size.width <= CONSTS.MOBILE_SIZE && (
         <div className={styles.icon}>
           {console.log(toggle)}
           {!toggle && (
@@ -38,8 +38,9 @@ const Navigation = () => {
       <nav
         className={cx(
           styles.navigation,
-          size.width <= 960 && styles.hidden,
-          toggle && styles.active
+          styles.hidden,
+          toggle && styles.active,
+          size.width > CONSTS.MOBILE_SIZE && styles.active
         )}
       >
         <Link to="/">Anasayfa</Link>
