@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import cx from 'classnames'
 import useWindowSize from '../../hooks/useWindowSize'
 import { Link, useStaticQuery, graphql } from 'gatsby'

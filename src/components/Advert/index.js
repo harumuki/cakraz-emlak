@@ -25,7 +25,7 @@ const Advert = ({ advertData }) => {
           )}
           <div className={styles.badges}>
             <span>{advertData.created_at}</span>
-            <span>{advertData.type == 'satilik' ? 'Satılık' : 'Kiralık'}</span>
+            <span>{advertData.type === 'satilik' ? 'Satılık' : 'Kiralık'}</span>
           </div>
         </div>
         <h3>{advertData.title}</h3>
