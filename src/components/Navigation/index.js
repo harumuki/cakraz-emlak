@@ -49,7 +49,6 @@ const Navigation = () => {
       <nav
         className={cx(
           styles.navigation,
-          styles.hidden,
           toggle && styles.active,
           size.width > CONSTS.MOBILE_SIZE && styles.active
         )}
