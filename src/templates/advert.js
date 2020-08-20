@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Reactmarkdown from 'react-markdown'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Carousel from '../components/Carousel'
@@ -15,7 +16,7 @@ const AdvertTemplate = ({ data }) => (
       )}
       <AdvertTable advert={data.strapiAdvert} />
       <TextBox title="İlan Açıklaması">
-        <p>{data.strapiAdvert.description}</p>
+        <Reactmarkdown source={data.strapiAdvert.description} />
       </TextBox>
     </Container>
   </Layout>

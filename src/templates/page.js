@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Title from '../components/Title'
 import HeroImg from '../components/HeroImg'
+import Reactmarkdown from 'react-markdown'
 
 import styles from './page.module.css'
 
@@ -13,9 +14,7 @@ const PageTemplate = ({ data }) => (
     <HeroImg image={data.strapiPage.heroimg.localFile.childImageSharp.fluid} height={350} />
     <Container>
       <Title className={styles.title}>{data.strapiPage.title}</Title>
-      <p className={styles.paragraph}>
-        {data.strapiPage.description}
-      </p>
+      <Reactmarkdown source={data.strapiPage.description} />
     </Container>
   </Layout>
 )
