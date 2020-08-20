@@ -29,7 +29,7 @@ const Carousel = ({ images }) => {
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     height: 480,
@@ -45,7 +45,7 @@ const Carousel = ({ images }) => {
     asNavFor: nav1,
     variableWidth: true,
     centerMode: true,
-    infinite: true
+    infinite: images.length < 7 ? true : false
   }
 
   return (
