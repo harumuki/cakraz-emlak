@@ -4,10 +4,35 @@
   padding-top: 42.5px;
   margin-top: 150px;
   box-shadow: -4px 0px 30px rgba(40, 40, 91, 0.05);
+
+  @media (--mobile) {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+}
+
+.container {
+  @media (--mobile) {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+}
+
+.logo {
+  font-size: 100px;
+  height: 1em;
+  color: rgba(var(--c-light), 1);
 }
 
 .info {
   width: 70%;
   display: flex;
   justify-content: space-between;
+
+  @media (--mobile) {
+    flex-direction: column;
+  }
 }

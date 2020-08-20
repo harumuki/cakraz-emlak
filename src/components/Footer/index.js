@@ -18,8 +18,10 @@ const Footer = () => {
   `)
   return (
     <footer className={styles.footer}>
-      <Container flex>
-        <Logo />
+      <Container flex classNames={styles.container}>
+        <div className={styles.logo}>
+          <Logo solid />
+        </div>
         <div className={styles.info}>
           {data.strapiHomepage && data.strapiHomepage.phone && <ContactItem icon="Phone" title="Telefon" value={data.strapiHomepage.phone} />}
           {data.strapiHomepage && data.strapiHomepage.location && <ContactItem icon="Location" title="Adres" value={data.strapiHomepage.location} />}
