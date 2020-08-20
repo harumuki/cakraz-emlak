@@ -29,7 +29,7 @@ const Carousel = ({ images }) => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     height: 480,
@@ -40,8 +40,6 @@ const Carousel = ({ images }) => {
   const thumbs = {
     infinite: false,
     slidesToShow: size.width <= 768 ? 2 : size.width <= 960 ? 4 : 7,
-    slidesToScroll: 1,
-    swipeToSlide: true,
     focusOnSelect: true,
     infinite: false,
     arrows: false,
