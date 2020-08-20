@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
+import { Cakraz } from '../icons'
 
 import styles from './logo.module.css'
 
-const Logo = () => {
+const Logo = ({solid}) => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "logo.png" }) {
@@ -19,7 +20,7 @@ const Logo = () => {
 
   return (
     <Link to="/">
-      <Img fluid={data.file.childImageSharp.fluid} className={styles.logo} />
+      {solid ? <Cakraz /> : <Img fluid={data.file.childImageSharp.fluid} className={styles.logo} />}
     </Link>
   )
 }
