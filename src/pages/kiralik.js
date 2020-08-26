@@ -9,7 +9,7 @@ import Stack from '../components/Stack'
 
 const RentPage = ({ data }) => {
   return (
-    <Layout>
+    <Layout title="Kiralık İlanlar">
       <Container>
         {data.allStrapiAdvert.edges.length > 0 ? (
           <>
