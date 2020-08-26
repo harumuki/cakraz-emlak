@@ -9,7 +9,7 @@ import Error from '../Error'
 const Highlights = () => {
   const data = useStaticQuery(graphql`
     {
-      adverts: allStrapiAdvert(limit: 3, filter: { published: { eq: true } }) {
+      adverts: allStrapiAdvert(filter: {published: {eq: true}, highlight: {eq: true}}) {
         edges {
           node {
             id
