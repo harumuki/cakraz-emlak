@@ -3,6 +3,7 @@
   height: 185px;
   padding-top: 42.5px;
   box-shadow: -4px 0px 30px rgba(40, 40, 91, 0.05);
+  margin-top: 120px;
 
   @media (--mobile) {
     height: auto;
