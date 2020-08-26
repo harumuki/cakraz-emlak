@@ -19,6 +19,7 @@ const Highlights = () => {
             location
             type
             created_at(locale: "tr", formatString: "DD MMMM YYYY")
+            highlight
             thumbnail {
               localFile {
                 childImageSharp {
