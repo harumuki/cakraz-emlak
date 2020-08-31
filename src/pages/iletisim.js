@@ -20,7 +20,7 @@ const Contact = ({ data }) => {
               width="600"
               height="450"
               frameBorder="0"
-              allowfullscreen=""
+              allowFullScreen=""
               aria-hidden="false"
               title="map"
             ></iframe>
