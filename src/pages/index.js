@@ -3,11 +3,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import HeroImg from '../components/HeroImg'
 import Highlights from '../components/Highlights'
+import Searchbox from '../components/Searchbox'
 
 const IndexPage = ({data}) => {
   return (
     <Layout>
       <HeroImg image={data.homepage.heroimg.localFile.childImageSharp.fluid} height={750} />
+      <Searchbox />
       <Highlights />
     </Layout>
   )
