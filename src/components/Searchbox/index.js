@@ -21,7 +21,7 @@ const Locations = () => {
   `)
   return (
     <div className={styles.select}>
-      <label for="location">Konum</label>
+      <label htmlFor="location">Konum</label>
       <select id="location" defaultValue={'Default'}>
         <option value="Default" disabled hidden>
           Konum Seçiniz
@@ -41,7 +41,7 @@ const Locations = () => {
 const Types = () => {
   return (
     <div className={styles.select}>
-      <label for="type">Tip</label>
+      <label htmlFor="type">Tip</label>
       <select id="type" defaultValue={'Kiralık'}>
         <option value="kiralik">Kiralık</option>
         <option value="satilik">Satılık</option>
