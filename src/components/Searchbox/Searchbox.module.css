@@ -29,6 +29,7 @@
     padding-left: 20px;
     border: 1px solid rgba(var(--c-light));
     border-radius: 6px;
+    background: transparent;
 
     &:focus {
       border-color: rgba(var(--c-accent));
