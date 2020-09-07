@@ -7,7 +7,6 @@ const NotFoundPage = () => (
   <Layout>
     <Container>
       <Error
-        code="404"
         title="Aradığınız sayfayı bulamıyoruz."
         content="Aradığınız sayfa kaldırılmış, isim değiştirilmiş veya geçici olarak kullanılamıyor olabilir."
       />

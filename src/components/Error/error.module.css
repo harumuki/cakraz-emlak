@@ -7,17 +7,6 @@
   justify-content: center;
   position: relative;
 
-  & span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 512px;
-    width: 100%;
-    color: rgba(var(--c-light), 0.15);
-    z-index: -1;
-    font-weight: var(--fw-bold);
-  }
-
   & p {
     color: rgba(var(--c-text), 0.5);
   }

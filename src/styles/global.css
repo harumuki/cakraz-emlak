@@ -27,7 +27,10 @@ body {
   font-family: var(--ff-sans);
   font-size: var(--fs-body);
   background-color: rgba(var(--c-background), 1);
-  color: rgba(var(--c-text), 1)
+  color: rgba(var(--c-text), 1);
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 300px;
 }
 
 h1 {
