@@ -10,7 +10,7 @@ import styles from './iletisim.module.css'
 
 const Contact = ({ data }) => {
   return (
-    <Layout title="İletişim">
+    <Layout title="İletişim" footer={false}>
       <Container>
         <Title>İletişim Bilgileri</Title>
         <div className={styles.wrapper}>
