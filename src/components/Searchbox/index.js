@@ -1,10 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Container from '../Container'
 
 import styles from './Searchbox.module.css'
 
-const Locations = () => {
+export const Locations = ({ location, setLocation }) => {
   const data = useStaticQuery(graphql`
     {
       locations: allStrapiAdvert(filter: { published: { eq: true } }) {
@@ -22,10 +21,8 @@ const Locations = () => {
   return (
     <div className={styles.select}>
       <label htmlFor="location">Konum</label>
-      <select id="location" defaultValue={'Default'}>
-        <option value="Default" disabled hidden>
-          Konum Seçiniz
-        </option>
+      <select id="location" onBlur={e => setLocation(e.target.value)}>
+        <option>Seçim yap</option>
         {data.locations.group.map(group => {
           return (
             <option key={group.edges[0].node.id}>
@@ -38,28 +35,15 @@ const Locations = () => {
   )
 }
 
-const Types = () => {
+export const Types = ({ type, setType }) => {
   return (
     <div className={styles.select}>
       <label htmlFor="type">Tip</label>
-      <select id="type" defaultValue={'Kiralık'}>
+      <select id="type" onBlur={e => setType(e.target.value)}>
+        <option>Seçim yap</option>
         <option value="kiralik">Kiralık</option>
         <option value="satilik">Satılık</option>
       </select>
     </div>
   )
 }
-
-const Searchbox = () => {
-  return (
-    <Container>
-      <div className={styles.searchbox}>
-        <Types />
-        <Locations />
-        <button type="button" className={styles.button}>Ara</button>
-      </div>
-    </Container>
-  )
-}
-
-export default Searchbox

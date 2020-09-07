@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import HeroImg from '../components/HeroImg'
 import Highlights from '../components/Highlights'
-import Searchbox from '../components/Searchbox'
+import Searchbox from '../components/Searchbox/Searchbox'
 
 const IndexPage = ({data}) => {
   return (
