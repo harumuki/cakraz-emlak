@@ -1,10 +1,12 @@
-import React from 'react';
+import React from 'react'
 import Img from 'gatsby-image'
 
-const HeroImg = ({image, height}) => (
-  <Img fluid={image} style={{maxHeight: height}} imgStyle={{
-    maxHeight: height,
-  }}  />
+import styles from './hero-img.module.css'
+
+const HeroImg = ({ image }) => (
+  <div className={styles.heroImg}>
+    <Img fluid={image} style={{ height: '100%' }} />
+  </div>
 )
 
 export default HeroImg
