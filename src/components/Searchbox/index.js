@@ -42,7 +42,6 @@ const Searchbox = () => {
   const handleSearch = () => {
     if (type !== 'default' && location !== 'default') {
       setShowResults(true)
-      console.log(type, location)
     }
   }
 

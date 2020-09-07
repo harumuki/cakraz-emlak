@@ -37,7 +37,7 @@ const SearchResults = ({ type, location }) => {
   useEffect(() => {
     setFilteredAdverts([])
 
-    data.adverts.edges.map(edge => {
+    data.adverts.edges.forEach(edge => {
       if (edge.node.location === location && edge.node.type === type) {
         setFilteredAdverts(prevState => [...prevState, edge])
       }
@@ -49,7 +49,7 @@ const SearchResults = ({ type, location }) => {
       <Title>Arama Sonuçları</Title>
       <Stack>
         {filteredAdverts.map(edge => (
-          <Advert advertData={edge.node} />
+          <Advert key={edge.node.id} advertData={edge.node} />
         ))}
       </Stack>
     </div>
