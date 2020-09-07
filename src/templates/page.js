@@ -11,7 +11,7 @@ import styles from './page.module.css'
 
 const PageTemplate = ({ data }) => (
   <Layout title={data.strapiPage.title}>
-    <HeroImg image={data.strapiPage.heroimg.localFile.childImageSharp.fluid} height={350} />
+    <HeroImg image={data.strapiPage.heroimg.localFile.childImageSharp.fluid} />
     <Container>
       <Title className={styles.title}>{data.strapiPage.title}</Title>
       <Reactmarkdown source={data.strapiPage.description} />

@@ -9,7 +9,7 @@ import Searchbox from '../components/Searchbox'
 const IndexPage = ({data}) => {
   return (
     <Layout>
-      <HeroImg image={data.homepage.heroimg.localFile.childImageSharp.fluid} height={550} />
+      <HeroImg image={data.homepage.heroimg.localFile.childImageSharp.fluid} />
       <Searchbox />
       <Highlights />
     </Layout>
