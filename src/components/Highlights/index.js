@@ -12,23 +12,7 @@ const Highlights = () => {
       adverts: allStrapiAdvert(filter: {published: {eq: true}, highlight: {eq: true}}) {
         edges {
           node {
-            id
-            slug
-            title
-            price
-            location
-            type
-            created_at(locale: "tr", formatString: "DD MMMM YYYY")
-            highlight
-            thumbnail {
-              localFile {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
+            ...Advert
           }
         }
       }

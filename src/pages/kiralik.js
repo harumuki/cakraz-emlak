@@ -33,22 +33,7 @@ export const query = graphql`
     allStrapiAdvert(filter: { type: { eq: "kiralik" }, published: { eq: true } }) {
       edges {
         node {
-          created_at(locale: "tr", formatString: "DD MMMM YYYY")
-          id
-          price
-          type
-          title
-          slug
-          location
-          thumbnail {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+          ...Advert
         }
       }
     }

@@ -35,22 +35,7 @@ export const query = graphql`
     ) {
       edges {
         node {
-          created_at(locale: "tr", formatString: "DD MMMM YYYY")
-          id
-          price
-          type
-          title
-          slug
-          location
-          thumbnail {
-            localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+          ...Advert
         }
       }
     }

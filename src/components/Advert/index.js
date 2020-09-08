@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { Location } from '../icons'
 import ThumbnailPlaceholder from '../ThumbnailPlaceholder'
@@ -18,11 +18,11 @@ const Advert = ({ advertData }) => {
               alt={advertData.alt}
             />
           ) : (
-            <ThumbnailPlaceholder
-              className={styles.heroImage}
-              alt={advertData.title}
-            />
-          )}
+              <ThumbnailPlaceholder
+                className={styles.heroImage}
+                alt={advertData.title}
+              />
+            )}
           <div className={styles.badges}>
             <span>{advertData.created_at}</span>
             <span>{advertData.type === 'satilik' ? 'Satılık' : 'Kiralık'}</span>
@@ -40,5 +40,27 @@ const Advert = ({ advertData }) => {
     </Link>
   )
 }
+
+export const query = graphql`
+  fragment Advert on StrapiAdvert {
+    id
+    slug
+    title
+    price
+    location
+    type
+    created_at(locale: "tr", formatString: "DD MMMM YYYY")
+    highlight
+    thumbnail {
+      localFile {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Advert

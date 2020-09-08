@@ -10,22 +10,7 @@ const SearchResults = ({ type, location }) => {
       adverts: allStrapiAdvert {
         edges {
           node {
-            id
-            slug
-            title
-            price
-            location
-            type
-            created_at(locale: "tr", formatString: "DD MMMM YYYY")
-            thumbnail {
-              localFile {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
+            ...Advert
           }
         }
       }
