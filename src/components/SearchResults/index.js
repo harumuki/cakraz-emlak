@@ -4,7 +4,7 @@ import Advert from '../Advert'
 import Stack from '../Stack'
 import Title from '../Title'
 
-const SearchResults = ({ type, location }) => {
+const SearchResults = ({ type, location, setShowResults }) => {
   const data = useStaticQuery(graphql`
     {
       adverts: allStrapiAdvert {
@@ -26,8 +26,11 @@ const SearchResults = ({ type, location }) => {
       if (edge.node.location === location && edge.node.type === type) {
         setFilteredAdverts(prevState => [...prevState, edge])
       }
+      if (type === 'default' || location === 'default') {
+        setShowResults(false)
+      }
     })
-  }, [data.adverts.edges, location, type])
+  }, [data.adverts.edges, location, type, setShowResults])
 
   return (
     <div style={{ marginBottom: 150 }}>

@@ -42,6 +42,8 @@ const Searchbox = () => {
   const handleSearch = () => {
     if (type !== 'default' && location !== 'default') {
       setShowResults(true)
+    }else {
+      setShowResults(false)
     }
   }
 
@@ -51,7 +53,7 @@ const Searchbox = () => {
         <label htmlFor="type">Tür</label>
         <select
           defaultValue={type}
-          onBlur={e => e.target.value !== 'default' && setType(e.target.value)}
+          onBlur={e => setType(e.target.value)}
           id="type"
         >
           <option value="default">
@@ -97,7 +99,7 @@ const Searchbox = () => {
         </button>
       </div>
 
-      {showResults && <SearchResults type={type} location={location} />}
+      {showResults && <SearchResults type={type} location={location} setShowResults={setShowResults} />}
     </Container>
   )
 }
