@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Advert from '../Advert'
 import Stack from '../Stack'
@@ -18,6 +18,7 @@ const SearchResults = ({ type, location, setShowResults }) => {
   `)
 
   const [filteredAdverts, setFilteredAdverts] = useState([])
+  const resultsRef = useRef(null)
 
   useEffect(() => {
     setFilteredAdverts([])
@@ -25,6 +26,7 @@ const SearchResults = ({ type, location, setShowResults }) => {
     data.adverts.edges.forEach(edge => {
       if (edge.node.location === location && edge.node.type === type) {
         setFilteredAdverts(prevState => [...prevState, edge])
+        resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
       if (type === 'default' || location === 'default') {
         setShowResults(false)
@@ -33,7 +35,7 @@ const SearchResults = ({ type, location, setShowResults }) => {
   }, [data.adverts.edges, location, type, setShowResults])
 
   return (
-    <div style={{ marginBottom: 150 }}>
+    <div style={{ marginBottom: 150, paddingTop: 50 }} ref={resultsRef}>
       <Title>Arama Sonuçları</Title>
       <Stack>
         {filteredAdverts.map(edge => (
