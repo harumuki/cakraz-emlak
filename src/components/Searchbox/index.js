@@ -67,10 +67,11 @@ const Searchbox = () => {
   const Locations = ({ type, location, setLocation }) => {
     return (
       <div className={styles.select}>
-        <label htmlFor="type">Konum</label>
+        <label htmlFor="location">Konum</label>
         <select
           defaultValue={location}
           onBlur={e => setLocation(e.target.value)}
+          id="location"
         >
           <option value="default">Seçiniz</option>
           {type &&
