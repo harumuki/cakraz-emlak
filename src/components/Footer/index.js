@@ -32,7 +32,7 @@ const Footer = () => {
           </ContactItem>
           <ContactItem
             link="/iletisim"
-            title="Adres"
+            title="Konum"
             value={data.strapiHomepage.location}
           >
             <Location />

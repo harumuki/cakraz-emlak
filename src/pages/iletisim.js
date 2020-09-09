@@ -3,16 +3,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Title from '../components/Title'
-import ContactItem from '../components/ContactItem'
-import { Location, Phone, Email } from '../components/icons'
+import { Location } from '../components/icons'
 
 import styles from './iletisim.module.css'
 
 const Contact = ({ data }) => {
   return (
-    <Layout title="İletişim" footer={false}>
+    <Layout title="İletişim">
       <Container>
-        <Title>İletişim Bilgileri</Title>
+        <Title className={styles.title}>İletişim Bilgileri</Title>
         <div className={styles.wrapper}>
           <div className={styles.map}>
             <iframe
@@ -26,27 +25,12 @@ const Contact = ({ data }) => {
             ></iframe>
           </div>
           <div className={styles.info}>
-            <ContactItem
-              link={'tel:' + data.strapiHomepage.phone}
-              title="Telefon"
-              value={data.strapiHomepage.phone}
-            >
-              <Phone />
-            </ContactItem>
-            <ContactItem
-              link="/iletisim"
-              title="Adres"
-              value={data.strapiHomepage.full_address}
-            >
+            <div className={styles.icon}>
               <Location />
-            </ContactItem>
-            <ContactItem
-              link={'mailto:' + data.strapiHomepage.email}
-              title="Email"
-              value={data.strapiHomepage.email}
-            >
-              <Email />
-            </ContactItem>
+            </div>
+            <div className={styles.content}>
+              <p>{data.strapiHomepage.full_address}</p>
+            </div>
           </div>
         </div>
       </Container>
@@ -57,10 +41,7 @@ const Contact = ({ data }) => {
 export const query = graphql`
   {
     strapiHomepage {
-      email
       full_address
-      location
-      phone
     }
   }
 `
