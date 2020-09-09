@@ -26,7 +26,10 @@ const SearchResults = ({ type, location, setShowResults }) => {
     data.adverts.edges.forEach(edge => {
       if (edge.node.location === location && edge.node.type === type) {
         setFilteredAdverts(prevState => [...prevState, edge])
-        resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        resultsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
       }
       if (type === 'default' || location === 'default') {
         setShowResults(false)

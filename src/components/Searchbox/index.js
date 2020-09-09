@@ -42,7 +42,7 @@ const Searchbox = () => {
   const handleSearch = () => {
     if (type !== 'default' && location !== 'default') {
       setShowResults(true)
-    }else {
+    } else {
       setShowResults(false)
     }
   }
@@ -56,9 +56,7 @@ const Searchbox = () => {
           onBlur={e => setType(e.target.value)}
           id="type"
         >
-          <option value="default">
-            Seçiniz
-          </option>
+          <option value="default">Seçiniz</option>
           <option value="kiralik">Kiralık</option>
           <option value="satilik">Satılık</option>
         </select>
@@ -74,9 +72,7 @@ const Searchbox = () => {
           defaultValue={location}
           onBlur={e => setLocation(e.target.value)}
         >
-          <option value="default">
-            Seçiniz
-          </option>
+          <option value="default">Seçiniz</option>
           {type &&
             type !== 'default' &&
             data[type].group.map(group => (
@@ -99,7 +95,13 @@ const Searchbox = () => {
         </button>
       </div>
 
-      {showResults && <SearchResults type={type} location={location} setShowResults={setShowResults} />}
+      {showResults && (
+        <SearchResults
+          type={type}
+          location={location}
+          setShowResults={setShowResults}
+        />
+      )}
     </Container>
   )
 }

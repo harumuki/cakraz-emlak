@@ -3,7 +3,7 @@ import Container from '../Container'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 
-import styles from './header.module.css';
+import styles from './header.module.css'
 
 const Header = () => (
   <header className={styles.header}>

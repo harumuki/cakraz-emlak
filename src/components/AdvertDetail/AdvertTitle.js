@@ -3,7 +3,7 @@ import { Location } from '../icons'
 
 import styles from './AdvertTitle.module.css'
 
-const AdvertTitle = ({advert}) => {
+const AdvertTitle = ({ advert }) => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{advert.title}</h1>

@@ -7,9 +7,7 @@ const TextBox = ({ title, children, className }) => {
   return (
     <div className={cx(styles.wrapper, className)}>
       <h4 className={styles.title}>{title}</h4>
-      <div className={styles.table}>
-        {children}
-      </div>
+      <div className={styles.table}>{children}</div>
     </div>
   )
 }

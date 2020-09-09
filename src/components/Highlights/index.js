@@ -9,7 +9,9 @@ import Error from '../Error'
 const Highlights = () => {
   const data = useStaticQuery(graphql`
     {
-      adverts: allStrapiAdvert(filter: {published: {eq: true}, highlight: {eq: true}}) {
+      adverts: allStrapiAdvert(
+        filter: { published: { eq: true }, highlight: { eq: true } }
+      ) {
         edges {
           node {
             ...Advert
@@ -18,19 +20,20 @@ const Highlights = () => {
       }
     }
   `)
-  return (
-    data.adverts.edges.length > 0 ? (
+  return data.adverts.edges.length > 0 ? (
     <section>
       <Container>
         <Title>Öne Çıkan İlanlar</Title>
         <Stack>
-          {data.adverts && data.adverts.edges.map(advert => (
-            <Advert key={advert.node.slug} advertData={advert.node} />
-          ))}
+          {data.adverts &&
+            data.adverts.edges.map(advert => (
+              <Advert key={advert.node.slug} advertData={advert.node} />
+            ))}
         </Stack>
       </Container>
     </section>
-    ) : <Error title="Hiç ilan yok" content="Daha sonra tekrar kontrol edin." />
+  ) : (
+    <Error title="Hiç ilan yok" content="Daha sonra tekrar kontrol edin." />
   )
 }
 

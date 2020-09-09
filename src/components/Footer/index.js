@@ -38,7 +38,7 @@ const Footer = () => {
             <Location />
           </ContactItem>
           <ContactItem
-            link={'mailto:'+data.strapiHomepage.email}
+            link={'mailto:' + data.strapiHomepage.email}
             title="Email"
             value={data.strapiHomepage.email}
           >

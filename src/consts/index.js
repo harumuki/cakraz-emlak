@@ -1,3 +1,3 @@
 export default {
-  MOBILE_SIZE: 960
+  MOBILE_SIZE: 960,
 }

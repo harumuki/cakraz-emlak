@@ -1,6 +1,6 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Çakraz Emlak`,
@@ -61,7 +61,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-css-customs`
+    `gatsby-plugin-css-customs`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

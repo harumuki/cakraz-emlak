@@ -20,7 +20,12 @@ const RentPage = ({ data }) => {
               ))}
             </Stack>
           </>
-        ) : <Error content="Yakında tekrar kontrol edin" title="Hiç kiralık ilan yok" /> }
+        ) : (
+          <Error
+            content="Yakında tekrar kontrol edin"
+            title="Hiç kiralık ilan yok"
+          />
+        )}
       </Container>
     </Layout>
   )
@@ -30,7 +35,9 @@ export default RentPage
 
 export const query = graphql`
   {
-    allStrapiAdvert(filter: { type: { eq: "kiralik" }, published: { eq: true } }) {
+    allStrapiAdvert(
+      filter: { type: { eq: "kiralik" }, published: { eq: true } }
+    ) {
       edges {
         node {
           ...Advert

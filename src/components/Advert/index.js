@@ -18,11 +18,11 @@ const Advert = ({ advertData }) => {
               alt={advertData.alt}
             />
           ) : (
-              <ThumbnailPlaceholder
-                className={styles.heroImage}
-                alt={advertData.title}
-              />
-            )}
+            <ThumbnailPlaceholder
+              className={styles.heroImage}
+              alt={advertData.title}
+            />
+          )}
           <div className={styles.badges}>
             <span>{advertData.created_at}</span>
             <span>{advertData.type === 'satilik' ? 'Satılık' : 'Kiralık'}</span>

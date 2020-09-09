@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
@@ -23,7 +22,7 @@ export default PageTemplate
 
 export const query = graphql`
   query PageTemplate($id: String!) {
-    strapiPage(id: {eq: $id}) {
+    strapiPage(id: { eq: $id }) {
       id
       slug
       title

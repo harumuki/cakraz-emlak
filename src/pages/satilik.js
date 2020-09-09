@@ -20,7 +20,12 @@ const SalePage = ({ data }) => {
               ))}
             </Stack>
           </>
-        ) : <Error content="Yakında tekrar kontrol edin" title="Hiç satılık ilan yok" /> }
+        ) : (
+          <Error
+            content="Yakında tekrar kontrol edin"
+            title="Hiç satılık ilan yok"
+          />
+        )}
       </Container>
     </Layout>
   )

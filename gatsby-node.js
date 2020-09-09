@@ -6,26 +6,28 @@
 
 // You can delete this file if you're not using it
 
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
-const path = require(`path`);
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+const path = require(`path`)
 
+const makeRequest = (graphql, request) =>
+  new Promise((resolve, reject) => {
+    resolve(
+      graphql(request).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
 
-const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
-  resolve(
-    graphql(request).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
-      
-      return result;
-    })
-  )
-});
+        return result
+      })
+    )
+  })
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
-  
-  const getAdverts = makeRequest(graphql, `
+  const { createPage } = actions
+
+  const getAdverts = makeRequest(
+    graphql,
+    `
     {
       allStrapiAdvert(filter: {published: {eq: true}}) {
         edges {
@@ -36,20 +38,23 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     result.data.allStrapiAdvert.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.slug}`,
         component: path.resolve(`src/templates/advert.js`),
         context: {
           id: node.id,
-          slug: node.slug
+          slug: node.slug,
         },
       })
     })
-  });
+  })
 
-  const getPages = makeRequest(graphql, `
+  const getPages = makeRequest(
+    graphql,
+    `
     {
       allStrapiPage(filter: {published: {eq: true}}) {
         edges {
@@ -60,7 +65,8 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-    `).then(result => {
+    `
+  ).then(result => {
     result.data.allStrapiPage.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.slug}`,
@@ -71,7 +77,7 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-  });
-  
+  })
+
   return Promise.all([getAdverts, getPages])
-};
+}

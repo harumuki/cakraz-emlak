@@ -5,7 +5,7 @@ import { Cakraz } from '../icons'
 
 import styles from './logo.module.css'
 
-const Logo = ({solid}) => {
+const Logo = ({ solid }) => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "logo.png" }) {
@@ -20,7 +20,11 @@ const Logo = ({solid}) => {
 
   return (
     <Link to="/">
-      {solid ? <Cakraz /> : <Img fluid={data.file.childImageSharp.fluid} className={styles.logo} />}
+      {solid ? (
+        <Cakraz />
+      ) : (
+        <Img fluid={data.file.childImageSharp.fluid} className={styles.logo} />
+      )}
     </Link>
   )
 }
