@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../Header'
 import Footer from '../Footer'
 
-const Layout = ({ children, title, header = true, footer = true }) => {
+const Layout = ({ children, title, description, header = true, footer = true }) => {
   const data = useStaticQuery(graphql`
     {
       strapiHomepage {
@@ -22,7 +22,7 @@ const Layout = ({ children, title, header = true, footer = true }) => {
           {title ? title + ' | ' : ''}
           {data.strapiHomepage.title}
         </title>
-        <meta name="description" content={data.strapiHomepage.description} />
+        <meta name="description" content={description ? description : data.strapiHomepage.description} />
         <meta name="keywords" content={data.strapiHomepage.keywords} />
       </Helmet>
       {header && <Header />}

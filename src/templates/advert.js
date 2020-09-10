@@ -8,7 +8,7 @@ import { AdvertTitle, AdvertTable } from '../components/AdvertDetail'
 import TextBox from '../components/TextBox'
 
 const AdvertTemplate = ({ data }) => (
-  <Layout title={data.strapiAdvert.title}>
+  <Layout title={data.strapiAdvert.title} description={data.strapiAdvert.description}>
     <Container>
       <AdvertTitle advert={data.strapiAdvert} />
       {data.strapiAdvert.images.length > 0 && (
