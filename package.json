@@ -45,7 +45,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "icon": "svgr src/icons -d src/components/icons --icon --replace-attr-values \"#1C1C1C=currentColor\""
+    "icon": "svgr src/icons -d src/components/_icons --icon --replace-attr-values \"#1C1C1C=currentColor\""
   },
   "repository": {
     "type": "git",

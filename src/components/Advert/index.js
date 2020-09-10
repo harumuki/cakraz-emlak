@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { Location } from '../icons'
+import { Location } from '../_icons'
 import ThumbnailPlaceholder from '../ThumbnailPlaceholder'
 
 import styles from './advert.module.css'

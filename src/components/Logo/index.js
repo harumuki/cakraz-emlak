@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { Cakraz } from '../icons'
+import { Cakraz } from '../_icons'
 
 import styles from './logo.module.css'
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import useWindowSize from '../../hooks/useWindowSize'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { Hamburger, Times } from '../icons'
+import { Hamburger, Times } from '../_icons'
 import CONSTS from '../../consts'
 import styles from './navigation.module.css'
 

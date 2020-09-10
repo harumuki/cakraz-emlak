@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Container from '../Container'
 import Logo from '../Logo'
-import { Location, Phone, Email } from '../icons'
+import { Location, Phone, Email } from '../_icons'
 import styles from './footer.module.css'
 
 const FooterItem = ({ children, title, value }) => {

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import Title from '../components/Title'
-import { Location } from '../components/icons'
+import { Location } from '../components/_icons'
 
 import styles from './iletisim.module.css'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Location } from '../icons'
+import { Location } from '../_icons'
 
 import styles from './AdvertTitle.module.css'
 

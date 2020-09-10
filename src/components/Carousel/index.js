@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Slider from 'react-slick'
 import Img from 'gatsby-image'
 import cx from 'classnames'
-import { SliderNext, SliderPrevious } from '../icons'
+import { SliderNext, SliderPrevious } from '../_icons'
 
 import 'slick-carousel/slick/slick.css'
 
