@@ -1,10 +1,21 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import Container from '../Container'
 import Logo from '../Logo'
-import ContactItem from '../ContactItem'
 import { Location, Phone, Email } from '../icons'
 import styles from './footer.module.css'
+
+const FooterItem = ({ children, title, value }) => {
+  return (
+    <div className={styles.item}>
+      {children}
+      <div className={styles.info}>
+        <span>{title}</span>
+        <span>{value}</span>
+      </div>
+    </div>
+  )
+}
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -23,27 +34,21 @@ const Footer = () => {
           <Logo solid />
         </div>
         <div className={styles.info}>
-          <ContactItem
-            link={'tel:' + data.strapiHomepage.phone}
-            title="Telefon"
-            value={data.strapiHomepage.phone}
-          >
-            <Phone />
-          </ContactItem>
-          <ContactItem
-            link="/iletisim"
-            title="Konum"
-            value={data.strapiHomepage.location}
-          >
-            <Location />
-          </ContactItem>
-          <ContactItem
-            link={'mailto:' + data.strapiHomepage.email}
-            title="Email"
-            value={data.strapiHomepage.email}
-          >
-            <Email />
-          </ContactItem>
+          <a href={'tel:' + data.strapiHomepage.phone}>
+            <FooterItem title="Telefon" value={data.strapiHomepage.phone}>
+              <Phone />
+            </FooterItem>
+          </a>
+          <Link to="/iletisim">
+            <FooterItem title="Konum" value={data.strapiHomepage.location}>
+              <Location />
+            </FooterItem>
+          </Link>
+          <a href={'mailto:' + data.strapiHomepage.email}>
+            <FooterItem title="Email" value={data.strapiHomepage.email}>
+              <Email />
+            </FooterItem>
+          </a>
         </div>
       </Container>
     </footer>
