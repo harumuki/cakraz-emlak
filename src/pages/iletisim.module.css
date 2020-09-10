@@ -18,6 +18,7 @@
 
   & :global(iframe) {
     width: 100%;
+    border-radius: 12px;
   }
 
   @media (--mobile) {
@@ -47,6 +48,7 @@
     margin-top: -35px;
     text-align: center;
     box-shadow: 0px 14px 20px rgba(40, 40, 91, 0.02);
+    border-radius: 6px;
 
   }
 
