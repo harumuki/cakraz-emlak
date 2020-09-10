@@ -2,11 +2,6 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
-  siteMetadata: {
-    title: `Çakraz Emlak`,
-    description: `Emlak Hizmetleri`,
-    author: `@oktay`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
