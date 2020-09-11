@@ -9,8 +9,8 @@ import 'slick-carousel/slick/slick.css'
 import styles from '../styles/carousel.module.css'
 
 const Carousel = ({ images }) => {
-  const [nav1, setNav1] = useState()
-  const [nav2, setNav2] = useState()
+  const [hero, setHero] = useState()
+  const [thumbnails, setThumbnails] = useState()
 
   const PrevArrow = ({ className, style, onClick }) => (
     <button className={cx(styles.arrowPrev, className)} onClick={onClick}>
@@ -24,20 +24,20 @@ const Carousel = ({ images }) => {
     </button>
   )
 
-  const settings = {
+  const heroSettings = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     height: 480,
-    asNavFor: nav2,
+    asNavFor: thumbnails,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   }
-  const thumbs = {
+  const thumbnailsSettings = {
     focusOnSelect: true,
     arrows: false,
-    asNavFor: nav1,
+    asNavFor: hero,
     variableWidth: true,
     centerMode: true,
     infinite: true,
@@ -46,11 +46,11 @@ const Carousel = ({ images }) => {
   return (
     <>
       <Slider
-        {...settings}
-        ref={slider1 => setNav1(slider1)}
+        {...heroSettings}
+        ref={hero => setHero(hero)}
         className={styles.carousel}
       >
-        {images.map((node, index) => (
+        {images.map(node => (
           <Img
             key={node.url}
             fluid={node.localFile.childImageSharp.full}
@@ -61,11 +61,11 @@ const Carousel = ({ images }) => {
       </Slider>
 
       <Slider
-        {...thumbs}
-        ref={slider2 => setNav2(slider2)}
+        {...thumbnailsSettings}
+        ref={thumbnails => setThumbnails(thumbnails)}
         className={styles.thumbnails}
       >
-        {images.map((node, index) => (
+        {images.map(node => (
           <Img
             key={node.url}
             fluid={node.localFile.childImageSharp.thumb}
