@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "cakraz-emlak",
+  "private": false,
+  "description": "Real Estate Website with Gatsby,",
+  "version": "1.0.0",
+  "author": "Oktay Çolakoğlu <oktaycolakoglu@gmail.com>",
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.24.41",
@@ -34,24 +34,23 @@
     "prettier": "2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "cakraz", "emlak", "real-estate" 
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby clean && gatsby build && gatsby serve",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "icon": "svgr src/icons -d src/components/icons --icon --replace-attr-values \"#1C1C1C=currentColor\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/oktay/cakraz-emlak"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/oktay/cakraz-emlak/issues"
   }
 }
