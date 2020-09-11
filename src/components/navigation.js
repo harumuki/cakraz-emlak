@@ -1,14 +1,30 @@
 import React, { useState } from 'react'
-import cx from 'classnames'
-import useWindowSize from '../hooks/useWindowSize'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import cx from 'classnames'
+
+import useWindowSize from '../hooks/useWindowSize'
 import { Hamburger, Times } from './icons'
 
 import styles from '../styles/navigation.module.css'
 
-const Navigation = () => {
-  const [toggle, setToggle] = useState(false)
+const Extra = ({ pages }) => {
+  return pages.map(page => (
+    <Link key={page.node.slug} to={`/${page.node.slug}`}>
+      {page.node.title}
+    </Link>
+  ))
+}
+
+const Button = ({toggle, setToggle }) => {
   const size = useWindowSize()
+  return size.width <= 960 && (
+    <button className={styles.icon} onClick={() => setToggle(!toggle)}>
+      {toggle ? <Times /> : <Hamburger />}
+    </button>
+  )
+}
+
+const Navigation = () => {
   const data = useStaticQuery(graphql`
     {
       allStrapiPage(filter: { published: { eq: true } }) {
@@ -22,48 +38,17 @@ const Navigation = () => {
     }
   `)
 
+  const [toggle, setToggle] = useState(false)
+
   return (
     <>
-      {size.width <= 960 && (
-        <>
-          {!toggle && (
-            <button
-              type="button"
-              onClick={() => setToggle(true)}
-              className={styles.icon}
-            >
-              <Hamburger />
-            </button>
-          )}
-          {toggle && (
-            <button
-              type="button"
-              onClick={() => setToggle(false)}
-              className={styles.icon}
-            >
-              <Times />
-            </button>
-          )}
-        </>
-      )}
-      <nav
-        className={cx(
-          styles.navigation,
-          toggle && styles.active,
-          size.width > 960 && styles.active
-        )}
-      >
+      <Button toggle={toggle} setToggle={setToggle} />
+
+      <nav className={cx(styles.navigation, toggle && styles.active)}>
         <Link to="/">Anasayfa</Link>
         <Link to="/satilik">Satılık</Link>
         <Link to="/kiralik">Kiralık</Link>
-
-        {data.allStrapiPage.edges.length > 0 &&
-          data.allStrapiPage.edges.map(page => (
-            <Link key={page.node.slug} to={`/${page.node.slug}`}>
-              {page.node.title}
-            </Link>
-          ))}
-
+        <Extra pages={data.allStrapiPage.edges} />
         <Link to="/iletisim">İletişim</Link>
       </nav>
     </>
