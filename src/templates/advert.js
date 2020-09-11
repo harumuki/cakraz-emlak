@@ -1,11 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Reactmarkdown from 'react-markdown'
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import Carousel from '../components/Carousel'
-import { AdvertTitle, AdvertTable } from '../components/AdvertDetail'
-import TextBox from '../components/TextBox'
+import Layout from '../components/layout'
+import Container from '../components/container'
+import Carousel from '../components/carousel'
+import AdvertTitle from '../components/advert-title'
+import AdvertTable from '../components/advert-table'
+import TextBox from '../components/textbox'
 
 const AdvertTemplate = ({ data }) => (
   <Layout title={data.strapiAdvert.title} description={data.strapiAdvert.description}>

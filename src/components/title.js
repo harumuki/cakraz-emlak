@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from './title.module.css'
+import styles from '../styles/title.module.css'
 
 const Title = ({ children, tag, className }) => {
   const TagName = tag ? tag : 'h1'

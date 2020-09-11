@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Advert from '../Advert'
-import Stack from '../Stack'
-import Title from '../Title'
+import Advert from './advert'
+import Stack from './stack'
+import Title from './title'
 
 const SearchResults = ({ type, location, setShowResults }) => {
   const data = useStaticQuery(graphql`

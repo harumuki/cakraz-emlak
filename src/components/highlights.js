@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Container from '../Container'
-import Title from '../Title'
-import Advert from '../Advert'
-import Stack from '../Stack'
-import Error from '../Error'
+import Container from './container'
+import Title from './title'
+import Advert from './advert'
+import Stack from './stack'
+import Error from './error'
 
 const Highlights = () => {
   const data = useStaticQuery(graphql`

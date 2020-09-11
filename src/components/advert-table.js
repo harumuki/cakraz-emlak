@@ -1,7 +1,7 @@
 import React from 'react'
-import TextBox from '../TextBox'
+import TextBox from './textbox'
 
-import styles from './AdvertTable.module.css'
+import styles from '../styles/advert-table.module.css'
 
 const AdvertTable = ({ advert }) => {
   return (

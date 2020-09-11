@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from './thumbnail-palceholder.module.css'
+import styles from '../styles/thumbnail-palceholder.module.css'
 
 const ThumbnailPlaceholder = ({className, alt}) => {
   return (

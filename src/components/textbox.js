@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from './TextBox.module.css'
+import styles from '../styles/textbox.module.css'
 
 const TextBox = ({ title, children, className }) => {
   return (

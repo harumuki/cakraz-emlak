@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
-import useWindowSize from '../../hooks/useWindowSize'
+import useWindowSize from '../hooks/useWindowSize'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import { Hamburger, Times } from '../_icons'
-import CONSTS from '../../consts'
-import styles from './navigation.module.css'
+import { Hamburger, Times } from './icons'
+
+import styles from '../styles/navigation.module.css'
 
 const Navigation = () => {
   const [toggle, setToggle] = useState(false)
@@ -24,7 +24,7 @@ const Navigation = () => {
 
   return (
     <>
-      {size.width <= CONSTS.MOBILE_SIZE && (
+      {size.width <= 960 && (
         <>
           {!toggle && (
             <button
@@ -50,7 +50,7 @@ const Navigation = () => {
         className={cx(
           styles.navigation,
           toggle && styles.active,
-          size.width > CONSTS.MOBILE_SIZE && styles.active
+          size.width > 960 && styles.active
         )}
       >
         <Link to="/">Anasayfa</Link>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Container from '../Container'
-import styles from './Searchbox.module.css'
-import SearchResults from '../SearchResults'
+import Container from './container'
+import SearchResults from './search-results'
+
+import styles from '../styles/searchbox.module.css'
 
 const Searchbox = () => {
   const data = useStaticQuery(graphql`

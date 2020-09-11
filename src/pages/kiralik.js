@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Title from '../components/Title'
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import Advert from '../components/Advert'
-import Error from '../components/Error'
-import Stack from '../components/Stack'
+import Title from '../components/title'
+import Layout from '../components/layout'
+import Container from '../components/container'
+import Advert from '../components/advert'
+import Error from '../components/error'
+import Stack from '../components/stack'
 
 const RentPage = ({ data }) => {
   return (

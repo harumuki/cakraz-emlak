@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import Slider from 'react-slick'
 import Img from 'gatsby-image'
 import cx from 'classnames'
-import { SliderNext, SliderPrevious } from '../_icons'
+import { SliderNext, SliderPrevious } from './icons'
 
 import 'slick-carousel/slick/slick.css'
 
-import styles from './carousel.module.css'
+import styles from '../styles/carousel.module.css'
 
 const Carousel = ({ images }) => {
   const [nav1, setNav1] = useState()

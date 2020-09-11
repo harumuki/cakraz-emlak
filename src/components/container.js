@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from './container.module.css'
+import styles from '../styles/container.module.css'
 
 const Container = ({ children, flex, classNames }) => (
   <div

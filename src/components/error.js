@@ -1,7 +1,7 @@
 import React from 'react'
-import Title from '../Title'
+import Title from './title'
 
-import styles from './error.module.css'
+import styles from '../styles/error.module.css'
 
 const Error = ({ title, content }) => {
   return (

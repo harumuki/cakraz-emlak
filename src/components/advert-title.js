@@ -1,7 +1,7 @@
 import React from 'react'
-import { Location } from '../_icons'
+import { Location } from './icons'
 
-import styles from './AdvertTitle.module.css'
+import styles from '../styles/advert-title.module.css'
 
 const AdvertTitle = ({ advert }) => {
   return (

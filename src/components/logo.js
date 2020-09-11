@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { Cakraz } from '../_icons'
+import { Cakraz } from './icons'
 
-import styles from './logo.module.css'
+import styles from '../styles/logo.module.css'
 
 const Logo = ({ solid }) => {
   const data = useStaticQuery(graphql`

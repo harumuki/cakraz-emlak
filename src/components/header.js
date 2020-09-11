@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from '../Container'
-import Logo from '../Logo'
-import Navigation from '../Navigation'
+import Container from './container'
+import Logo from './logo'
+import Navigation from './navigation'
 
-import styles from './header.module.css'
+import styles from '../styles/header.module.css'
 
 const Header = () => (
   <header className={styles.header}>

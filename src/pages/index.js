@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import HeroImg from '../components/HeroImg'
-import Highlights from '../components/Highlights'
-import Searchbox from '../components/Searchbox'
+import Layout from '../components/layout'
+import HeroImg from '../components/hero-img'
+import Highlights from '../components/highlights'
+import Searchbox from '../components/searchbox'
 
 const IndexPage = ({ data }) => {
   return (

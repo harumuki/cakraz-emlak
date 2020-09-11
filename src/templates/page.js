@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import Title from '../components/Title'
-import HeroImg from '../components/HeroImg'
+import Layout from '../components/layout'
+import Container from '../components/container'
+import Title from '../components/title'
+import HeroImg from '../components/hero-img'
 import Reactmarkdown from 'react-markdown'
 
-import styles from './page.module.css'
+import styles from '../styles/page.module.css'
 
 const PageTemplate = ({ data }) => (
   <Layout title={data.strapiPage.title}>

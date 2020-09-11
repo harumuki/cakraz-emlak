@@ -1,8 +1,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from './header'
+import Footer from './footer'
 
 const Layout = ({ children, title, description, header = true, footer = true }) => {
   const data = useStaticQuery(graphql`

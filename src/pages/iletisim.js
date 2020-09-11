@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Container from '../components/Container'
-import Title from '../components/Title'
-import { Location } from '../components/_icons'
+import Layout from '../components/layout'
+import Container from '../components/container'
+import Title from '../components/title'
+import { Location } from '../components/icons'
 
-import styles from './iletisim.module.css'
+import styles from '../styles/iletisim.module.css'
 
 const Contact = ({ data }) => {
   return (
