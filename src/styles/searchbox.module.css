@@ -81,7 +81,8 @@
   }
 
   &:focus {
-    outline-color: #72ff8f;
+    outline: 0;
+    background: #3ba133;
   }
 
   @media (--mobile) {
