@@ -38,6 +38,10 @@
       border-color: rgba(var(--c-accent));
       color: rgba(var(--c-accent));
       outline: none;
+
+      & + svg {
+        color: rgba(var(--c-accent));
+      }
     }
   }
 
