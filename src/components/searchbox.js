@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Container from './container'
 import SearchResults from './search-results'
+import { ChevronDown } from './icons'
 
 import styles from '../styles/searchbox.module.css'
 
@@ -61,6 +62,7 @@ const Searchbox = () => {
           <option value="kiralik">Kiralık</option>
           <option value="satilik">Satılık</option>
         </select>
+        <ChevronDown />
       </div>
     )
   }
@@ -83,6 +85,7 @@ const Searchbox = () => {
               </option>
             ))}
         </select>
+        <ChevronDown />
       </div>
     )
   }

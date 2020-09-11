@@ -1,4 +1,5 @@
 export { default as Cakraz } from './Cakraz'
+export { default as ChevronDown } from './ChevronDown'
 export { default as Email } from './Email'
 export { default as Hamburger } from './Hamburger'
 export { default as Location } from './Location'
