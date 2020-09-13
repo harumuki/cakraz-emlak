@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://cakraz-emlak.vercel.app">
     <img alt="Gatsby" src="src/images/logo.png" width="100" />
@@ -23,15 +22,15 @@ Real estate website wtih Gatsby & Strapi.
     yarn install
     ```
 
-3.  **Start Strapi Server**
+2.  **Start Strapi Server**
 
     ```shell
     yarn develop
     ```
 
     Your backend/cms is now running at `http://localhost:1337`!
-    
-    *Note: If your first time, you need create admin user, create **at least one content for each content type** and activate **`find`**, **`findone`** permissions for content       types **otherwise you cant run gatsby server.***
+
+    \*Note: If your first time, you need create admin user, create **at least one content for each content type** and activate **`find`**, **`findone`** permissions for content types **otherwise you cant run gatsby server.\***
 
 ## 🌟 Run Frontend
 
@@ -44,17 +43,17 @@ When Strapi part is done and running, you can start develop frontend part.
     cd cakraz-emlak
     yarn install
     ```
-    
-2. **Run server**
 
-   ```shell
-   yarn develop
-   ```
-    
+2.  **Run server**
+
+    ```shell
+    yarn develop
+    ```
+
     Your site is now running at `http://localhost:8000!`
 
-    *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool     in the Gatsby tutorial.*
-     
+    _Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the Gatsby tutorial._
+
     ### ❤ Icons
 
     When you want use new custom icon, just place svg file to `src/icons` directory and run icon script
@@ -79,4 +78,4 @@ When Strapi part is done and running, you can start develop frontend part.
     src/icons/slider-previous.svg -> src/components/icons/SliderPrevious.js
     src/icons/times.svg -> src/components/icons/Times.js
     Done in 4.58s.
-     ```
+    ```

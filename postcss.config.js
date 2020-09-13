@@ -1,9 +1,9 @@
 module.exports = {
   plugins: {
-    'autoprefixer': {},
+    autoprefixer: {},
     'postcss-nested': {},
     'postcss-custom-media': {
-      importFrom: ['src/styles/global.css']
-    }
-  }
+      importFrom: ['src/styles/global.css'],
+    },
+  },
 }

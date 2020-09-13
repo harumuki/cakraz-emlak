@@ -15,12 +15,14 @@ const Extra = ({ pages }) => {
   ))
 }
 
-const Button = ({toggle, setToggle }) => {
+const Button = ({ toggle, setToggle }) => {
   const size = useWindowSize()
-  return size.width <= 960 && (
-    <button className={styles.icon} onClick={() => setToggle(!toggle)}>
-      {toggle ? <Times /> : <Hamburger />}
-    </button>
+  return (
+    size.width <= 960 && (
+      <button className={styles.icon} onClick={() => setToggle(!toggle)}>
+        {toggle ? <Times /> : <Hamburger />}
+      </button>
+    )
   )
 }
 
