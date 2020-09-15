@@ -21,20 +21,21 @@ const SearchResults = ({ type, location, setShowResults }) => {
   const resultsRef = useRef(null)
 
   useEffect(() => {
-    setFilteredAdverts([])
+    setFilteredAdverts(
+      data.adverts.edges.filter(
+        edge => edge.node.location === location && edge.node.type === type
+      )
+    )
 
-    data.adverts.edges.forEach(edge => {
-      if (edge.node.location === location && edge.node.type === type) {
-        setFilteredAdverts(prevState => [...prevState, edge])
-        resultsRef.current.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        })
-      }
-      if (type === 'default' || location === 'default') {
-        setShowResults(false)
-      }
-    })
+    if (setFilteredAdverts.length) {
+      resultsRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+      setShowResults(true)
+    } else {
+      setShowResults(false)
+    }
   }, [data.adverts.edges, location, type, setShowResults])
 
   return (
